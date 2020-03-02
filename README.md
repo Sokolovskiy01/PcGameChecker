@@ -1,2 +1,0 @@
-# PcGameChecker
-Project for UŁ
