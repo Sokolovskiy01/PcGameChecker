@@ -1,0 +1,8 @@
+C:\Users\magic\Desktop\PcGameChecker\bin\Debug\PcGameChecker.exe.config
+C:\Users\magic\Desktop\PcGameChecker\bin\Debug\PcGameChecker.exe
+C:\Users\magic\Desktop\PcGameChecker\bin\Debug\PcGameChecker.pdb
+C:\Users\magic\Desktop\PcGameChecker\obj\Debug\PcGameChecker.csprojAssemblyReference.cache
+C:\Users\magic\Desktop\PcGameChecker\obj\Debug\PcGameChecker.Properties.Resources.resources
+C:\Users\magic\Desktop\PcGameChecker\obj\Debug\PcGameChecker.csproj.GenerateResource.cache
+C:\Users\magic\Desktop\PcGameChecker\obj\Debug\PcGameChecker.exe
+C:\Users\magic\Desktop\PcGameChecker\obj\Debug\PcGameChecker.pdb
