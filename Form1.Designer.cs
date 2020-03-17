@@ -35,7 +35,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(270, 288);
+            this.button1.Location = new System.Drawing.Point(270, 323);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(260, 115);
             this.button1.TabIndex = 0;
@@ -51,6 +51,7 @@
             this.label1.Size = new System.Drawing.Size(46, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // circularProgressBar1
             // 
@@ -62,13 +63,13 @@
             this.circularProgressBar1.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.circularProgressBar1.InnerMargin = 2;
             this.circularProgressBar1.InnerWidth = -1;
-            this.circularProgressBar1.Location = new System.Drawing.Point(270, 9);
+            this.circularProgressBar1.Location = new System.Drawing.Point(270, 57);
             this.circularProgressBar1.MarqueeAnimationSpeed = 2000;
             this.circularProgressBar1.Name = "circularProgressBar1";
             this.circularProgressBar1.OuterColor = System.Drawing.Color.Gray;
             this.circularProgressBar1.OuterMargin = -25;
             this.circularProgressBar1.OuterWidth = 26;
-            this.circularProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.circularProgressBar1.ProgressColor = System.Drawing.Color.DodgerBlue;
             this.circularProgressBar1.ProgressWidth = 25;
             this.circularProgressBar1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.circularProgressBar1.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
