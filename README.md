@@ -2,6 +2,6 @@
 Project for UŁ
 
 # Authors
-Dmytro Sokolovskyi
-Vladyslav Zagurskiy
-Vladyslav Kvoka
+Dmytro Sokolovskyi;
+Vladyslav Zagurskiy;
+Vladyslav Kvoka;
