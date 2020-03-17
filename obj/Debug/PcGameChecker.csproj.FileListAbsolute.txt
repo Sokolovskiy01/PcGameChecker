@@ -15,3 +15,6 @@ C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.Proper
 C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.csproj.GenerateResource.cache
 C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.exe
 C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.pdb
+C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\CircularProgressBar.dll
+C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\WinFormAnimation.dll
+C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.csproj.CopyComplete

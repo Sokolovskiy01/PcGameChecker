@@ -19,12 +19,19 @@ namespace PcGameChecker
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            //circularProgressBar1.Value = 0;
+            circularProgressBar1.Minimum = 0;
+            circularProgressBar1.Maximum = 100;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label1.Text = "Lorem ipsum dolor sit amet.";
+            //label1.Text = "Lorem ipsum dolor sit amet.";
+            circularProgressBar1.Value = 0;
+            for (int i = 0; i <= 100; i++){
+                for (int j = 0; j < 400000; j++) ;
+                circularProgressBar1.Value = i;
+            }
         }
     }
 }
