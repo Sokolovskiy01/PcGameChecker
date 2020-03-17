@@ -2,6 +2,8 @@
 Project for UŁ
 
 # Authors
-*TeamLead* Dmytro Sokolovskyi
-*Core* Vladyslav Zagurskiy
-*Tester|serializer* Vladyslav Kvoka
+Dmytro Sokolovskyi
+
+Vladyslav Zagurskiy
+
+Vladyslav Kvoka
