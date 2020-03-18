@@ -9,7 +9,6 @@ C:\Users\magic\Desktop\PcGameChecker\obj\Debug\PcGameChecker.pdb
 C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\PcGameChecker.exe.config
 C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\PcGameChecker.exe
 C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\PcGameChecker.pdb
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.csprojAssemblyReference.cache
 C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.Form1.resources
 C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.Properties.Resources.resources
 C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.csproj.GenerateResource.cache
@@ -23,3 +22,6 @@ C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\EntityFramework.SqlS
 C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\EntityFramework.xml
 C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\Universe.CpuUsage.dll
+C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\Topshelf.dll
+C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\Topshelf.xml
+C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.csprojAssemblyReference.cache

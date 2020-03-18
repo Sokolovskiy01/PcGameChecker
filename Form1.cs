@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Diagnostics;
 using System.Linq;
 using System.Management;
 using System.Text;
@@ -21,43 +22,70 @@ namespace PcGameChecker
 		}
 
 		public void getcpu()
-		{ 
+		{
 			ManagementClass myManagementClass = new ManagementClass("Win32_Processor");
 			ManagementObjectCollection myManagementCollection = myManagementClass.GetInstances();
 			//PropertyDataCollection myProperties = myManagementClass.Properties;
 
 			foreach (var obj in myManagementCollection)
 			{
-				cpu_usage.Text = "CPU Usage : " + myManagementClass.GetPropertyValue("LoadPercentage") + "%";
-				circularProgressBar1.Value = Convert.ToInt32(myManagementClass.GetPropertyValue("LoadPercentage"));
-
 				foreach (var myProperty in myManagementClass.Properties)
 				{
 					//myPropertyResults.Add(myProperty.Name,obj.Properties[myProperty.Name].Value);
 					richTextBox1.Text += myProperty.Name + " : " + obj.Properties[myProperty.Name].Value + "\n";
-					if (myProperty.Name == "LoadPercentage")
-					{
-						cpu_usage.Text = "CPU Usage : " + obj.Properties[myProperty.Name].Value + "%";
-						circularProgressBar1.Value = Convert.ToInt32(obj.Properties[myProperty.Name].Value);
-					}
 				}
 			}
 		}
+		public void DisplayTotalRam()
+		{
+			string Query = "SELECT MaxCapacity FROM Win32_PhysicalMemoryArray";
+			ManagementObjectSearcher searcher = new ManagementObjectSearcher(Query);
+			foreach (ManagementObject WniPART in searcher.Get())
+			{
+				UInt32 SizeinKB = Convert.ToUInt32(WniPART.Properties["MaxCapacity"].Value);
+				UInt32 SizeinMB = SizeinKB / 1024;
+				UInt32 SizeinGB = SizeinMB / 1024;
+				richTextBox1.Text += ("Size in KB: {0}, Size in MB: {1}, Size in GB: {2}", SizeinKB, SizeinMB, SizeinGB);
+			}
+		}
 
+		PerformanceCounter cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
+		PerformanceCounter ramCounter = new PerformanceCounter("Memory", "Available MBytes");
+		public int getCurrentCpuUsage()
+		{
+			return Convert.ToInt32(cpuCounter.NextValue());
+		}
+		public int getAvailableRAM()
+		{
+			return Convert.ToInt32(ramCounter.NextValue());
+		}
 		private void Form1_Load(object sender, EventArgs e)
 		{
-			circularProgressBar1.Minimum = 0;
-			circularProgressBar1.Maximum = 100;
+			CpuBar.Minimum = 0;
+			CpuBar.Maximum = 100;
+			RamBar.Minimum = 0;
+			//PerformanceCounter pccc = new PerformanceCounter("Memory", "System Code Resident Bytes");
+			RamBar.Maximum = Convert.ToInt32(GC.GetTotalMemory(true));
+			DisplayTotalRam();
+			//ram_usage.Text = pccc.NextValue().ToString();
 		}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
 			getcpu();
+
 		}
 
 		private void label1_Click(object sender, EventArgs e)
 		{
 
+		}
+
+		private void timer1_Tick(object sender, EventArgs e)
+		{
+			int cpu_usage_val = getCurrentCpuUsage();
+			cpu_usage.Text = "CPU Usage : " + cpu_usage_val.ToString() + "%";
+			CpuBar.Value = cpu_usage_val;
 		}
 	}
 }

@@ -4,9 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Management;
+using System.Runtime.InteropServices;
+using Topshelf.Runtime.Windows;
 
 namespace PcGameChecker
 {
+
     static class Program
     {
         /// <summary>

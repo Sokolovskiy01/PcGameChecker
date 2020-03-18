@@ -28,58 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
-            this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
+            this.CpuBar = new CircularProgressBar.CircularProgressBar();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.cpu_usage = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.RamBar = new CircularProgressBar.CircularProgressBar();
+            this.GpuBar = new CircularProgressBar.CircularProgressBar();
+            this.ram_usage = new System.Windows.Forms.Label();
+            this.gpu_usage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(990, 537);
+            this.button1.Location = new System.Drawing.Point(662, 537);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(260, 115);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Click me";
+            this.button1.Text = "Get info";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // circularProgressBar1
+            // CpuBar
             // 
-            this.circularProgressBar1.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circularProgressBar1.AnimationSpeed = 500;
-            this.circularProgressBar1.BackColor = System.Drawing.Color.Transparent;
-            this.circularProgressBar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold);
-            this.circularProgressBar1.ForeColor = System.Drawing.Color.Transparent;
-            this.circularProgressBar1.InnerColor = System.Drawing.Color.Transparent;
-            this.circularProgressBar1.InnerMargin = 2;
-            this.circularProgressBar1.InnerWidth = 1;
-            this.circularProgressBar1.Location = new System.Drawing.Point(990, 164);
-            this.circularProgressBar1.MarqueeAnimationSpeed = 2000;
-            this.circularProgressBar1.Name = "circularProgressBar1";
-            this.circularProgressBar1.OuterColor = System.Drawing.Color.DeepPink;
-            this.circularProgressBar1.OuterMargin = -25;
-            this.circularProgressBar1.OuterWidth = 26;
-            this.circularProgressBar1.ProgressColor = System.Drawing.Color.Goldenrod;
-            this.circularProgressBar1.ProgressWidth = 25;
-            this.circularProgressBar1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.circularProgressBar1.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.circularProgressBar1.Size = new System.Drawing.Size(260, 260);
-            this.circularProgressBar1.StartAngle = 270;
-            this.circularProgressBar1.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.circularProgressBar1.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
-            this.circularProgressBar1.SubscriptText = ".2";
-            this.circularProgressBar1.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.circularProgressBar1.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
-            this.circularProgressBar1.SuperscriptText = "°C";
-            this.circularProgressBar1.TabIndex = 2;
-            this.circularProgressBar1.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.CpuBar.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.CpuBar.AnimationSpeed = 500;
+            this.CpuBar.BackColor = System.Drawing.Color.Transparent;
+            this.CpuBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold);
+            this.CpuBar.ForeColor = System.Drawing.Color.Transparent;
+            this.CpuBar.InnerColor = System.Drawing.Color.Transparent;
+            this.CpuBar.InnerMargin = 2;
+            this.CpuBar.InnerWidth = 1;
+            this.CpuBar.Location = new System.Drawing.Point(334, 202);
+            this.CpuBar.MarqueeAnimationSpeed = 2000;
+            this.CpuBar.Name = "CpuBar";
+            this.CpuBar.OuterColor = System.Drawing.Color.Tomato;
+            this.CpuBar.OuterMargin = -25;
+            this.CpuBar.OuterWidth = 26;
+            this.CpuBar.ProgressColor = System.Drawing.Color.Goldenrod;
+            this.CpuBar.ProgressWidth = 25;
+            this.CpuBar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.CpuBar.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
+            this.CpuBar.Size = new System.Drawing.Size(260, 260);
+            this.CpuBar.StartAngle = 270;
+            this.CpuBar.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.CpuBar.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.CpuBar.SubscriptText = ".2";
+            this.CpuBar.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.CpuBar.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.CpuBar.SuperscriptText = "°C";
+            this.CpuBar.TabIndex = 2;
+            this.CpuBar.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.CpuBar.Value = 68;
             // 
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(12, 12);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(972, 640);
+            this.richTextBox1.Size = new System.Drawing.Size(316, 640);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
             // 
@@ -87,19 +94,113 @@
             // 
             this.cpu_usage.AutoSize = true;
             this.cpu_usage.Font = new System.Drawing.Font("Comfortaa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cpu_usage.Location = new System.Drawing.Point(1030, 427);
+            this.cpu_usage.Location = new System.Drawing.Point(382, 317);
             this.cpu_usage.Name = "cpu_usage";
             this.cpu_usage.Size = new System.Drawing.Size(136, 29);
             this.cpu_usage.TabIndex = 4;
             this.cpu_usage.Text = "CPU Usage :";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // RamBar
+            // 
+            this.RamBar.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.RamBar.AnimationSpeed = 500;
+            this.RamBar.BackColor = System.Drawing.Color.Transparent;
+            this.RamBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold);
+            this.RamBar.ForeColor = System.Drawing.Color.Transparent;
+            this.RamBar.InnerColor = System.Drawing.Color.Transparent;
+            this.RamBar.InnerMargin = 2;
+            this.RamBar.InnerWidth = 1;
+            this.RamBar.Location = new System.Drawing.Point(662, 202);
+            this.RamBar.MarqueeAnimationSpeed = 2000;
+            this.RamBar.Name = "RamBar";
+            this.RamBar.OuterColor = System.Drawing.Color.Tomato;
+            this.RamBar.OuterMargin = -25;
+            this.RamBar.OuterWidth = 26;
+            this.RamBar.ProgressColor = System.Drawing.Color.Goldenrod;
+            this.RamBar.ProgressWidth = 25;
+            this.RamBar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.RamBar.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
+            this.RamBar.Size = new System.Drawing.Size(260, 260);
+            this.RamBar.StartAngle = 270;
+            this.RamBar.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.RamBar.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.RamBar.SubscriptText = ".2";
+            this.RamBar.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.RamBar.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.RamBar.SuperscriptText = "°C";
+            this.RamBar.TabIndex = 5;
+            this.RamBar.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.RamBar.Value = 68;
+            // 
+            // GpuBar
+            // 
+            this.GpuBar.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.GpuBar.AnimationSpeed = 500;
+            this.GpuBar.BackColor = System.Drawing.Color.Transparent;
+            this.GpuBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold);
+            this.GpuBar.ForeColor = System.Drawing.Color.Transparent;
+            this.GpuBar.InnerColor = System.Drawing.Color.Transparent;
+            this.GpuBar.InnerMargin = 2;
+            this.GpuBar.InnerWidth = 1;
+            this.GpuBar.Location = new System.Drawing.Point(990, 202);
+            this.GpuBar.MarqueeAnimationSpeed = 2000;
+            this.GpuBar.Name = "GpuBar";
+            this.GpuBar.OuterColor = System.Drawing.Color.Tomato;
+            this.GpuBar.OuterMargin = -25;
+            this.GpuBar.OuterWidth = 26;
+            this.GpuBar.ProgressColor = System.Drawing.Color.Goldenrod;
+            this.GpuBar.ProgressWidth = 25;
+            this.GpuBar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.GpuBar.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
+            this.GpuBar.Size = new System.Drawing.Size(260, 260);
+            this.GpuBar.StartAngle = 270;
+            this.GpuBar.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.GpuBar.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.GpuBar.SubscriptText = ".2";
+            this.GpuBar.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.GpuBar.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.GpuBar.SuperscriptText = "°C";
+            this.GpuBar.TabIndex = 6;
+            this.GpuBar.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.GpuBar.Value = 68;
+            // 
+            // ram_usage
+            // 
+            this.ram_usage.AutoSize = true;
+            this.ram_usage.Font = new System.Drawing.Font("Comfortaa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ram_usage.Location = new System.Drawing.Point(707, 317);
+            this.ram_usage.Name = "ram_usage";
+            this.ram_usage.Size = new System.Drawing.Size(137, 29);
+            this.ram_usage.TabIndex = 7;
+            this.ram_usage.Text = "RAM Usage :";
+            // 
+            // gpu_usage
+            // 
+            this.gpu_usage.AutoSize = true;
+            this.gpu_usage.Font = new System.Drawing.Font("Comfortaa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.gpu_usage.Location = new System.Drawing.Point(1031, 317);
+            this.gpu_usage.Name = "gpu_usage";
+            this.gpu_usage.Size = new System.Drawing.Size(136, 29);
+            this.gpu_usage.TabIndex = 8;
+            this.gpu_usage.Text = "GPU Usage :";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 664);
+            this.Controls.Add(this.gpu_usage);
+            this.Controls.Add(this.ram_usage);
+            this.Controls.Add(this.GpuBar);
+            this.Controls.Add(this.RamBar);
             this.Controls.Add(this.cpu_usage);
-            this.Controls.Add(this.circularProgressBar1);
+            this.Controls.Add(this.CpuBar);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
@@ -113,9 +214,14 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private CircularProgressBar.CircularProgressBar circularProgressBar1;
+        private CircularProgressBar.CircularProgressBar CpuBar;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label cpu_usage;
+        private System.Windows.Forms.Timer timer1;
+        private CircularProgressBar.CircularProgressBar RamBar;
+        private CircularProgressBar.CircularProgressBar GpuBar;
+        private System.Windows.Forms.Label ram_usage;
+        private System.Windows.Forms.Label gpu_usage;
     }
 }
 
