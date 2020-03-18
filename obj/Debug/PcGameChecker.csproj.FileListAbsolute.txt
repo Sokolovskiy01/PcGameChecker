@@ -22,3 +22,4 @@ C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\EntityFramework.dll
 C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\EntityFramework.xml
 C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\Universe.CpuUsage.dll
