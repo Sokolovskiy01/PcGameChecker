@@ -45,7 +45,7 @@ namespace PcGameChecker
 				Ramsize = Convert.ToUInt32(WniPART.Properties["MaxCapacity"].Value) / 1024; //Display in MB
 			}
 			uint corecount = 0;
-			foreach (var item in new System.Management.ManagementObjectSearcher("Select NumberOfCores from Win32_Processor").Get()){
+			foreach (var item in new System.Management.ManagementObjectSearcher("SELECT NumberOfCores FROM Win32_Processor").Get()){
 				corecount += uint.Parse(item["NumberOfCores"].ToString());
 			}
 			return Ramsize / corecount;

@@ -63,9 +63,6 @@
     <Reference Include="Topshelf, Version=4.2.1.215, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
       <HintPath>packages\Topshelf.4.2.1\lib\net452\Topshelf.dll</HintPath>
     </Reference>
-    <Reference Include="Universe.CpuUsage, Version=2.2.497.598, Culture=neutral, PublicKeyToken=17687aae3e4abb16, processorArchitecture=MSIL">
-      <HintPath>packages\Universe.CpuUsage.2.2.497.598\lib\net472\Universe.CpuUsage.dll</HintPath>
-    </Reference>
     <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
       <HintPath>packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
     </Reference>
