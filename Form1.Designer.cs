@@ -65,13 +65,13 @@
             this.CpuBar.Name = "CpuBar";
             this.CpuBar.OuterColor = System.Drawing.Color.Tomato;
             this.CpuBar.OuterMargin = -25;
-            this.CpuBar.OuterWidth = 26;
+            this.CpuBar.OuterWidth = 25;
             this.CpuBar.ProgressColor = System.Drawing.Color.Goldenrod;
             this.CpuBar.ProgressWidth = 25;
             this.CpuBar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.CpuBar.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
             this.CpuBar.Size = new System.Drawing.Size(260, 260);
-            this.CpuBar.StartAngle = 270;
+            this.CpuBar.StartAngle = 180;
             this.CpuBar.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.CpuBar.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
             this.CpuBar.SubscriptText = ".2";
@@ -94,7 +94,7 @@
             // 
             this.cpu_usage.AutoSize = true;
             this.cpu_usage.Font = new System.Drawing.Font("Comfortaa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cpu_usage.Location = new System.Drawing.Point(382, 317);
+            this.cpu_usage.Location = new System.Drawing.Point(380, 465);
             this.cpu_usage.Name = "cpu_usage";
             this.cpu_usage.Size = new System.Drawing.Size(136, 29);
             this.cpu_usage.TabIndex = 4;
@@ -121,13 +121,13 @@
             this.RamBar.Name = "RamBar";
             this.RamBar.OuterColor = System.Drawing.Color.Tomato;
             this.RamBar.OuterMargin = -25;
-            this.RamBar.OuterWidth = 26;
+            this.RamBar.OuterWidth = 25;
             this.RamBar.ProgressColor = System.Drawing.Color.Goldenrod;
             this.RamBar.ProgressWidth = 25;
             this.RamBar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.RamBar.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
             this.RamBar.Size = new System.Drawing.Size(260, 260);
-            this.RamBar.StartAngle = 270;
+            this.RamBar.StartAngle = 180;
             this.RamBar.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.RamBar.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
             this.RamBar.SubscriptText = ".2";
@@ -153,13 +153,13 @@
             this.GpuBar.Name = "GpuBar";
             this.GpuBar.OuterColor = System.Drawing.Color.Tomato;
             this.GpuBar.OuterMargin = -25;
-            this.GpuBar.OuterWidth = 26;
+            this.GpuBar.OuterWidth = 25;
             this.GpuBar.ProgressColor = System.Drawing.Color.Goldenrod;
             this.GpuBar.ProgressWidth = 25;
             this.GpuBar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.GpuBar.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
             this.GpuBar.Size = new System.Drawing.Size(260, 260);
-            this.GpuBar.StartAngle = 270;
+            this.GpuBar.StartAngle = 180;
             this.GpuBar.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.GpuBar.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
             this.GpuBar.SubscriptText = ".2";
@@ -174,7 +174,7 @@
             // 
             this.ram_usage.AutoSize = true;
             this.ram_usage.Font = new System.Drawing.Font("Comfortaa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ram_usage.Location = new System.Drawing.Point(707, 317);
+            this.ram_usage.Location = new System.Drawing.Point(690, 465);
             this.ram_usage.Name = "ram_usage";
             this.ram_usage.Size = new System.Drawing.Size(137, 29);
             this.ram_usage.TabIndex = 7;
@@ -184,7 +184,7 @@
             // 
             this.gpu_usage.AutoSize = true;
             this.gpu_usage.Font = new System.Drawing.Font("Comfortaa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.gpu_usage.Location = new System.Drawing.Point(1031, 317);
+            this.gpu_usage.Location = new System.Drawing.Point(1018, 465);
             this.gpu_usage.Name = "gpu_usage";
             this.gpu_usage.Size = new System.Drawing.Size(136, 29);
             this.gpu_usage.TabIndex = 8;

@@ -32,21 +32,23 @@ namespace PcGameChecker
 				foreach (var myProperty in myManagementClass.Properties)
 				{
 					//myPropertyResults.Add(myProperty.Name,obj.Properties[myProperty.Name].Value);
+
 					richTextBox1.Text += myProperty.Name + " : " + obj.Properties[myProperty.Name].Value + "\n";
 				}
 			}
 		}
-		public void DisplayTotalRam()
+		public uint TotalRam()
 		{
-			string Query = "SELECT MaxCapacity FROM Win32_PhysicalMemoryArray";
-			ManagementObjectSearcher searcher = new ManagementObjectSearcher(Query);
-			foreach (ManagementObject WniPART in searcher.Get())
-			{
-				UInt32 SizeinKB = Convert.ToUInt32(WniPART.Properties["MaxCapacity"].Value);
-				UInt32 SizeinMB = SizeinKB / 1024;
-				UInt32 SizeinGB = SizeinMB / 1024;
-				richTextBox1.Text += ("Size in KB: {0}, Size in MB: {1}, Size in GB: {2}", SizeinKB, SizeinMB, SizeinGB);
+			ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT MaxCapacity FROM Win32_PhysicalMemoryArray");
+			uint Ramsize = 0;
+			foreach (ManagementObject WniPART in searcher.Get()) {
+				Ramsize = Convert.ToUInt32(WniPART.Properties["MaxCapacity"].Value) / 1024; //Display in MB
 			}
+			uint corecount = 0;
+			foreach (var item in new System.Management.ManagementObjectSearcher("Select NumberOfCores from Win32_Processor").Get()){
+				corecount += uint.Parse(item["NumberOfCores"].ToString());
+			}
+			return Ramsize / corecount;
 		}
 
 		PerformanceCounter cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
@@ -64,16 +66,13 @@ namespace PcGameChecker
 			CpuBar.Minimum = 0;
 			CpuBar.Maximum = 100;
 			RamBar.Minimum = 0;
-			//PerformanceCounter pccc = new PerformanceCounter("Memory", "System Code Resident Bytes");
-			RamBar.Maximum = Convert.ToInt32(GC.GetTotalMemory(true));
-			DisplayTotalRam();
+			RamBar.Maximum = Convert.ToInt32(TotalRam());
 			//ram_usage.Text = pccc.NextValue().ToString();
 		}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
 			getcpu();
-
 		}
 
 		private void label1_Click(object sender, EventArgs e)
@@ -86,6 +85,9 @@ namespace PcGameChecker
 			int cpu_usage_val = getCurrentCpuUsage();
 			cpu_usage.Text = "CPU Usage : " + cpu_usage_val.ToString() + "%";
 			CpuBar.Value = cpu_usage_val;
+			int ram_usage_val = Convert.ToInt32(TotalRam()) - getAvailableRAM();
+			ram_usage.Text = "RAM Usage : " + ram_usage_val.ToString() + "MB";
+			RamBar.Value = ram_usage_val;
 		}
 	}
 }
