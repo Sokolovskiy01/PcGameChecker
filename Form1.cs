@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Diagnostics;
 using System.Linq;
 using System.Management;
@@ -14,9 +15,9 @@ using System.Data.Entity.Core.Objects;
 
 namespace PcGameChecker
 {
-	public partial class Form1 : Form
+	public partial class Main_Form : Form
 	{
-		public Form1()
+		public Main_Form()
 		{
 			InitializeComponent();
 		}
@@ -32,7 +33,20 @@ namespace PcGameChecker
 				foreach (var myProperty in myManagementClass.Properties)
 				{
 					//myPropertyResults.Add(myProperty.Name,obj.Properties[myProperty.Name].Value);
-
+					if (myProperty.Name == "SystemName") Comp_name.Text = obj.Properties[myProperty.Name].Value.ToString();
+					richTextBox1.Text += myProperty.Name + " : " + obj.Properties[myProperty.Name].Value + "\n";
+				}
+			}
+		}
+		public void getgpu()
+		{
+			ManagementClass mc = new ManagementClass("Win32_VideoController");
+			ManagementObjectCollection moc = mc.GetInstances();
+			foreach(var obj in moc)
+			{
+				richTextBox1.Text += "..............................................\n";
+				foreach (var myProperty in mc.Properties)
+				{
 					richTextBox1.Text += myProperty.Name + " : " + obj.Properties[myProperty.Name].Value + "\n";
 				}
 			}
@@ -73,6 +87,7 @@ namespace PcGameChecker
 		private void button1_Click(object sender, EventArgs e)
 		{
 			getcpu();
+			getgpu();
 		}
 
 		private void label1_Click(object sender, EventArgs e)
