@@ -12,11 +12,17 @@ using System.Threading.Tasks;
 using Microsoft.Win32;
 using System.Windows.Forms;
 using System.Data.Entity.Core.Objects;
+using OpenCL.Net;
+using System.IO;
 
 namespace PcGameChecker
 {
 	public partial class Main_Form : Form
 	{
+		PerformanceCounter cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
+		PerformanceCounter ramCounter = new PerformanceCounter("Memory", "Available MBytes");
+		Process GpuZ = new Process();
+		public bool gpuz_opened = false;
 		public Main_Form()
 		{
 			InitializeComponent();
@@ -42,11 +48,12 @@ namespace PcGameChecker
 		{
 			ManagementClass mc = new ManagementClass("Win32_VideoController");
 			ManagementObjectCollection moc = mc.GetInstances();
-			foreach(var obj in moc)
+			foreach (var obj in moc)
 			{
 				richTextBox1.Text += "..............................................\n";
 				foreach (var myProperty in mc.Properties)
 				{
+					if (myProperty.Name == "AdapterRAM") gpu_usage.Text = (Convert.ToInt32(obj.Properties[myProperty.Name].Value) / 1048576).ToString();
 					richTextBox1.Text += myProperty.Name + " : " + obj.Properties[myProperty.Name].Value + "\n";
 				}
 			}
@@ -58,23 +65,11 @@ namespace PcGameChecker
 			foreach (ManagementObject WniPART in searcher.Get()) {
 				Ramsize = Convert.ToUInt32(WniPART.Properties["MaxCapacity"].Value) / 1024; //Display in MB
 			}
-			uint corecount = 0;
-			foreach (var item in new System.Management.ManagementObjectSearcher("SELECT NumberOfCores FROM Win32_Processor").Get()){
-				corecount += uint.Parse(item["NumberOfCores"].ToString());
-			}
-			return Ramsize / corecount;
+			return Ramsize / 4;
 		}
 
-		PerformanceCounter cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
-		PerformanceCounter ramCounter = new PerformanceCounter("Memory", "Available MBytes");
-		public int getCurrentCpuUsage()
-		{
-			return Convert.ToInt32(cpuCounter.NextValue());
-		}
-		public int getAvailableRAM()
-		{
-			return Convert.ToInt32(ramCounter.NextValue());
-		}
+		public int getCurrentCpuUsage() { return Convert.ToInt32(cpuCounter.NextValue()); }
+		public int getAvailableRAM() { return Convert.ToInt32(ramCounter.NextValue()); }
 		private void Form1_Load(object sender, EventArgs e)
 		{
 			CpuBar.Minimum = 0;
@@ -86,13 +81,36 @@ namespace PcGameChecker
 
 		private void button1_Click(object sender, EventArgs e)
 		{
+			//NvAPIWrapper.Native.GPU.Structures.PhysicalGPUHandle pghu_handler = new NvAPIWrapper.Native.GPU.Structures.PhysicalGPUHandle();
+			//NvAPIWrapper.GPU.PhysicalGPU nvgpu = new NvAPIWrapper.GPU.PhysicalGPU(pghu_handler);
+			//richTextBox1.Text += nvgpu.FullName.Length.ToString();
 			getcpu();
 			getgpu();
-		}
+			ErrorCode error;
+			Platform[] platforms = Cl.GetPlatformIDs(out error);
+			List<Device> devicesList = new List<Device>();
+			foreach (Platform platform in platforms)
+			{
+				string platformName = Cl.GetPlatformInfo(platform, PlatformInfo.Name, out error).ToString();
+				Console.WriteLine("Platform: " + platformName);
+				//CheckErr(error, "Cl.GetPlatformInfo");
 
-		private void label1_Click(object sender, EventArgs e)
-		{
+				//We will be looking only for GPU devices in Release mode
 
+				//foreach (Device device in Cl.Cl.GetDeviceIDs(platform, DeviceType.Cpu, out error))
+
+				foreach (Device device in Cl.GetDeviceIDs(platform, DeviceType.Gpu, out error))
+				{
+					//CheckErr(error, "Cl.GetDeviceIDs");
+					//richTextBox1.Text += "Device: " + device.ToString();
+					devicesList.Add(device);
+				}
+			}
+
+			Device _device = devicesList[0];
+
+			richTextBox1.Text += "Max Clock Frequency: " + Cl.GetDeviceInfo(_device, DeviceInfo.MaxClockFrequency, out error).CastTo<uint>() + "\n";
+			richTextBox1.Text += "Memory bus width : " + (Cl.GetDeviceInfo(_device, DeviceInfo.GlobalMemCacheSize, out error).CastTo<long>()).ToString();
 		}
 
 		private void timer1_Tick(object sender, EventArgs e)
@@ -103,6 +121,29 @@ namespace PcGameChecker
 			int ram_usage_val = Convert.ToInt32(TotalRam()) - getAvailableRAM();
 			ram_usage.Text = "RAM Usage : " + ram_usage_val.ToString() + "MB";
 			RamBar.Value = ram_usage_val;
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			var currdir = Directory.GetCurrentDirectory();
+			GpuZ.StartInfo = new ProcessStartInfo("GPU-Z.2.30.0.exe");
+			GpuZ.StartInfo.WorkingDirectory = currdir;
+			//GpuZ.StartInfo.Verb = "runas";
+			//GpuZ.StartInfo.CreateNoWindow = true;
+			//GpuZ.StartInfo.UseShellExecute = false;
+			GpuZ.Start();
+			gpuz_opened = true;
+		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			gpuz_opened = false;
+			GpuZ.Kill();
+		}
+
+		private void Main_Form_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			if (gpuz_opened) GpuZ.Kill();
 		}
 	}
 }
