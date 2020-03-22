@@ -53,7 +53,7 @@ namespace PcGameChecker
 				richTextBox1.Text += "..............................................\n";
 				foreach (var myProperty in mc.Properties)
 				{
-					if (myProperty.Name == "AdapterRAM") gpu_usage.Text = (Convert.ToInt32(obj.Properties[myProperty.Name].Value) / 1048576).ToString();
+					//if (myProperty.Name == "AdapterRAM") gpu_usage.Text = (Convert.ToInt32(obj.Properties[myProperty.Name].Value) / 1048576).ToString();
 					richTextBox1.Text += myProperty.Name + " : " + obj.Properties[myProperty.Name].Value + "\n";
 				}
 			}
