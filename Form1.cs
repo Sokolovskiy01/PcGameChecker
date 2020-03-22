@@ -21,8 +21,6 @@ namespace PcGameChecker
 	{
 		PerformanceCounter cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
 		PerformanceCounter ramCounter = new PerformanceCounter("Memory", "Available MBytes");
-		Process GpuZ = new Process();
-		public bool gpuz_opened = false;
 		public Main_Form()
 		{
 			InitializeComponent();
@@ -53,7 +51,7 @@ namespace PcGameChecker
 				richTextBox1.Text += "..............................................\n";
 				foreach (var myProperty in mc.Properties)
 				{
-					//if (myProperty.Name == "AdapterRAM") gpu_usage.Text = (Convert.ToInt32(obj.Properties[myProperty.Name].Value) / 1048576).ToString();
+					if (myProperty.Name == "AdapterRAM") gpu_usage.Text = "Total VRAM : " + (Convert.ToInt64(obj.Properties[myProperty.Name].Value) / 1048576).ToString() + " MB";
 					richTextBox1.Text += myProperty.Name + " : " + obj.Properties[myProperty.Name].Value + "\n";
 				}
 			}
@@ -123,27 +121,9 @@ namespace PcGameChecker
 			RamBar.Value = ram_usage_val;
 		}
 
-		private void button2_Click(object sender, EventArgs e)
-		{
-			var currdir = Directory.GetCurrentDirectory();
-			GpuZ.StartInfo = new ProcessStartInfo("GPU-Z.2.30.0.exe");
-			GpuZ.StartInfo.WorkingDirectory = currdir;
-			//GpuZ.StartInfo.Verb = "runas";
-			//GpuZ.StartInfo.CreateNoWindow = true;
-			//GpuZ.StartInfo.UseShellExecute = false;
-			GpuZ.Start();
-			gpuz_opened = true;
-		}
-
-		private void button3_Click(object sender, EventArgs e)
-		{
-			gpuz_opened = false;
-			GpuZ.Kill();
-		}
-
 		private void Main_Form_FormClosing(object sender, FormClosingEventArgs e)
 		{
-			if (gpuz_opened) GpuZ.Kill();
+
 		}
 	}
 }
