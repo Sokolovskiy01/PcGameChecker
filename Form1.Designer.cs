@@ -39,6 +39,10 @@
             this.gpu_usage = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.Comp_name = new System.Windows.Forms.Label();
+            this.CPU_perf = new System.Diagnostics.PerformanceCounter();
+            this.RAM_perf = new System.Diagnostics.PerformanceCounter();
+            ((System.ComponentModel.ISupportInitialize)(this.CPU_perf)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RAM_perf)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -54,7 +58,7 @@
             // CpuBar
             // 
             this.CpuBar.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.CpuBar.AnimationSpeed = 500;
+            this.CpuBar.AnimationSpeed = 250;
             this.CpuBar.BackColor = System.Drawing.Color.Transparent;
             this.CpuBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.CpuBar.ForeColor = System.Drawing.Color.Transparent;
@@ -98,13 +102,13 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 500;
+            this.timer1.Interval = 250;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // RamBar
             // 
             this.RamBar.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.RamBar.AnimationSpeed = 500;
+            this.RamBar.AnimationSpeed = 250;
             this.RamBar.BackColor = System.Drawing.Color.Transparent;
             this.RamBar.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.RamBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold);
@@ -208,6 +212,17 @@
             this.Comp_name.TabIndex = 11;
             this.Comp_name.Text = "Comp_name";
             // 
+            // CPU_perf
+            // 
+            this.CPU_perf.CategoryName = "Processor";
+            this.CPU_perf.CounterName = "% Processor time";
+            this.CPU_perf.InstanceName = "_Total";
+            // 
+            // RAM_perf
+            // 
+            this.RAM_perf.CategoryName = "Memory";
+            this.RAM_perf.CounterName = "Available MBytes";
+            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -229,8 +244,9 @@
             this.Text = "PcGameChecker";
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.LightPink;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_Form_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.CPU_perf)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RAM_perf)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,6 +264,8 @@
 		private System.Windows.Forms.Label gpu_usage;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label Comp_name;
+        private System.Diagnostics.PerformanceCounter CPU_perf;
+        private System.Diagnostics.PerformanceCounter RAM_perf;
         //private Syncfusion.XForms.ProgressBar.SfCircularProgressBar sirc1;
     }
 }

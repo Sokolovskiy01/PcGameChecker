@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Diagnostics;
 using System.Linq;
 using System.Management;
@@ -19,8 +18,6 @@ namespace PcGameChecker
 {
 	public partial class Main_Form : Form
 	{
-		PerformanceCounter cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
-		PerformanceCounter ramCounter = new PerformanceCounter("Memory", "Available MBytes");
 		public Main_Form()
 		{
 			InitializeComponent();
@@ -56,6 +53,7 @@ namespace PcGameChecker
 				}
 			}
 		}
+
 		public uint TotalRam()
 		{
 			ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT MaxCapacity FROM Win32_PhysicalMemoryArray");
@@ -66,10 +64,10 @@ namespace PcGameChecker
 			return Ramsize / 4;
 		}
 
-		public int getCurrentCpuUsage() { return Convert.ToInt32(cpuCounter.NextValue()); }
-		public int getAvailableRAM() { return Convert.ToInt32(ramCounter.NextValue()); }
 		private void Form1_Load(object sender, EventArgs e)
 		{
+			BringToFront();
+			SendToBack();
 			CpuBar.Minimum = 0;
 			CpuBar.Maximum = 100;
 			RamBar.Minimum = 0;
@@ -113,17 +111,13 @@ namespace PcGameChecker
 
 		private void timer1_Tick(object sender, EventArgs e)
 		{
-			int cpu_usage_val = getCurrentCpuUsage();
+			uint ram_total = TotalRam();
+			int cpu_usage_val = Convert.ToInt32(CPU_perf.NextValue());
+			int ram_usage_val = Convert.ToInt32(ram_total - RAM_perf.NextValue());
 			cpu_usage.Text = "CPU Usage : " + cpu_usage_val.ToString() + "%";
 			CpuBar.Value = cpu_usage_val;
-			int ram_usage_val = Convert.ToInt32(TotalRam()) - getAvailableRAM();
 			ram_usage.Text = "RAM Usage : " + ram_usage_val.ToString() + "MB";
 			RamBar.Value = ram_usage_val;
-		}
-
-		private void Main_Form_FormClosing(object sender, FormClosingEventArgs e)
-		{
-
 		}
 	}
 }
