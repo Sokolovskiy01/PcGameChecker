@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Management;
 using System.Runtime.InteropServices;
 using Topshelf.Runtime.Windows;
+using System.Drawing.Text;
 
 namespace PcGameChecker
 {
@@ -15,13 +16,12 @@ namespace PcGameChecker
 		/// The main entry point for the application.
 		/// </summary>
 		[STAThread]
-		[DllImport("User32.dll")]
-		[return: MarshalAs(UnmanagedType.Bool)]
-		public static extern bool SetForegroundWindow(IntPtr hWnd);
 		static void Main()
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
+			Application.Run(new Initialization_form());
+			Application.Run(new GetStartedForm());
 			Application.Run(new Main_Form());
 		}
 	}

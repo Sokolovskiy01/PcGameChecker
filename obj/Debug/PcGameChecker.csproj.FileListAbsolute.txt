@@ -29,3 +29,5 @@ C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\OpenCL.Net.dll
 C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.csproj.CoreCompileInputs.cache
 C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\NvAPIWrapper.dll
 C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\NvAPIWrapper.xml
+C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.Initialization_form.resources
+C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.GetStartedForm.resources

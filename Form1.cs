@@ -13,16 +13,33 @@ using System.Windows.Forms;
 using System.Data.Entity.Core.Objects;
 using OpenCL.Net;
 using System.IO;
+using System.Drawing.Text;
+using System.Runtime.InteropServices;
 
 namespace PcGameChecker
 {
 	public partial class Main_Form : Form
 	{
+		public PrivateFontCollection pfc = new PrivateFontCollection();
 		public Main_Form()
 		{
 			InitializeComponent();
 		}
+		public void getOS()
+		{
+			ManagementClass myManagementClass = new ManagementClass("Win32_OperatingSystem");
+			ManagementObjectCollection myManagementCollection = myManagementClass.GetInstances();
+			//PropertyDataCollection myProperties = myManagementClass.Properties;
 
+			foreach (var obj in myManagementCollection)
+			{
+				foreach (var myProperty in myManagementClass.Properties)
+				{
+					//myPropertyResults.Add(myProperty.Name,obj.Properties[myProperty.Name].Value);
+					richTextBox1.Text += myProperty.Name + " : " + obj.Properties[myProperty.Name].Value + "\n";
+				}
+			}
+		}
 		public void getcpu()
 		{
 			ManagementClass myManagementClass = new ManagementClass("Win32_Processor");
@@ -34,6 +51,7 @@ namespace PcGameChecker
 				foreach (var myProperty in myManagementClass.Properties)
 				{
 					//myPropertyResults.Add(myProperty.Name,obj.Properties[myProperty.Name].Value);
+					if (myProperty.Name == "Name") Sys_proc_name.Text = obj.Properties[myProperty.Name].Value.ToString();
 					if (myProperty.Name == "SystemName") Comp_name.Text = obj.Properties[myProperty.Name].Value.ToString();
 					richTextBox1.Text += myProperty.Name + " : " + obj.Properties[myProperty.Name].Value + "\n";
 				}
@@ -66,6 +84,15 @@ namespace PcGameChecker
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
+			int fontlenght = Properties.Resources.Comfortaa_VariableFont_wght.Length;
+			byte[] fontdata = Properties.Resources.Comfortaa_VariableFont_wght;
+			System.IntPtr data = Marshal.AllocCoTaskMem(fontlenght);
+			Marshal.Copy(fontdata, 0, data, fontlenght);
+			pfc.AddMemoryFont(data, fontlenght);
+
+			Font Comfortaa = new Font(pfc.Families[0],this.Font.Size);
+
+			Sys_total_ram.Text = "Total RAM : " + TotalRam().ToString() + "MB";
 			BringToFront();
 			SendToBack();
 			CpuBar.Minimum = 0;
@@ -75,13 +102,21 @@ namespace PcGameChecker
 			//ram_usage.Text = pccc.NextValue().ToString();
 		}
 
+		public void CustomFont()
+		{
+			Comp_name.Font = new Font(pfc.Families[0], Comp_name.Font.Size);
+		}
+
 		private void button1_Click(object sender, EventArgs e)
 		{
 			//NvAPIWrapper.Native.GPU.Structures.PhysicalGPUHandle pghu_handler = new NvAPIWrapper.Native.GPU.Structures.PhysicalGPUHandle();
 			//NvAPIWrapper.GPU.PhysicalGPU nvgpu = new NvAPIWrapper.GPU.PhysicalGPU(pghu_handler);
 			//richTextBox1.Text += nvgpu.FullName.Length.ToString();
-			getcpu();
-			getgpu();
+			richTextBox1.Text = "";
+			CustomFont();
+			//getcpu();
+			//getgpu();
+			//getOS();
 			ErrorCode error;
 			Platform[] platforms = Cl.GetPlatformIDs(out error);
 			List<Device> devicesList = new List<Device>();
@@ -103,10 +138,15 @@ namespace PcGameChecker
 				}
 			}
 
+			foreach (var vdev in devicesList)
+			{
+				richTextBox1.Text += "Max Clock Frequency: " + Cl.GetDeviceInfo(vdev, DeviceInfo.MaxClockFrequency, out error).CastTo<uint>() + "\n";
+				//richTextBox1.Text += "Memory bus width : " + (Cl.GetDeviceInfo(vdev, DeviceInfo.GlobalMemCacheSize, out error).CastTo<long>()).ToString();
+			}
 			Device _device = devicesList[0];
 
-			richTextBox1.Text += "Max Clock Frequency: " + Cl.GetDeviceInfo(_device, DeviceInfo.MaxClockFrequency, out error).CastTo<uint>() + "\n";
-			richTextBox1.Text += "Memory bus width : " + (Cl.GetDeviceInfo(_device, DeviceInfo.GlobalMemCacheSize, out error).CastTo<long>()).ToString();
+			//richTextBox1.Text += "Max Clock Frequency: " + Cl.GetDeviceInfo(_device, DeviceInfo.MaxClockFrequency, out error).CastTo<uint>() + "\n";
+			//richTextBox1.Text += "Memory bus width : " + (Cl.GetDeviceInfo(_device, DeviceInfo.GlobalMemCacheSize, out error).CastTo<long>()).ToString();
 		}
 
 		private void timer1_Tick(object sender, EventArgs e)
@@ -118,6 +158,11 @@ namespace PcGameChecker
 			CpuBar.Value = cpu_usage_val;
 			ram_usage.Text = "RAM Usage : " + ram_usage_val.ToString() + "MB";
 			RamBar.Value = ram_usage_val;
+		}
+
+		private void RamBar_MouseHover(object sender, EventArgs e)
+		{
+			
 		}
 	}
 }

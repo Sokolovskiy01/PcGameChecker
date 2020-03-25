@@ -1,0 +1,7 @@
+#24ad75 Lime Green
+#256fb4 Blue
+#ffffff White
+#999999 Grey
+
+#cc3333 Red_Category
+#e7b234 Orange_Category
