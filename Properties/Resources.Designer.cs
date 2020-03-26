@@ -63,19 +63,9 @@ namespace PcGameChecker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Bez_nazwy_2 {
+        internal static System.Drawing.Bitmap appbackground1 {
             get {
-                object obj = ResourceManager.GetObject("Bez nazwy-2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Bez_nazwy_3 {
-            get {
-                object obj = ResourceManager.GetObject("Bez nazwy-3", resourceCulture);
+                object obj = ResourceManager.GetObject("appbackground1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -116,16 +106,6 @@ namespace PcGameChecker.Properties {
         internal static System.Drawing.Bitmap gradient {
             get {
                 object obj = ResourceManager.GetObject("gradient", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pier_dock_sea_dusk_shore_118549_3992x2992 {
-            get {
-                object obj = ResourceManager.GetObject("pier_dock_sea_dusk_shore_118549_3992x2992", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -31,7 +31,10 @@
             this.CloseImage = new System.Windows.Forms.PictureBox();
             this.GetStartedLabel = new System.Windows.Forms.Label();
             this.CopyrightLabel = new System.Windows.Forms.Label();
+            this.Panel_fake_rectangle = new System.Windows.Forms.Panel();
+            this.ScanPCLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.CloseImage)).BeginInit();
+            this.Panel_fake_rectangle.SuspendLayout();
             this.SuspendLayout();
             // 
             // CloseImage
@@ -47,37 +50,63 @@
             this.CloseImage.TabStop = false;
             this.CloseImage.Click += new System.EventHandler(this.pictureBox1_Click);
             this.CloseImage.MouseLeave += new System.EventHandler(this.CloseImage_MouseLeave);
-            this.CloseImage.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
+            this.CloseImage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CloseImage_MouseMove);
             // 
             // GetStartedLabel
             // 
             this.GetStartedLabel.BackColor = System.Drawing.Color.Transparent;
-            this.GetStartedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 61.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.GetStartedLabel.Location = new System.Drawing.Point(74, 12);
+            this.GetStartedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 66F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.GetStartedLabel.Location = new System.Drawing.Point(74, 29);
             this.GetStartedLabel.Name = "GetStartedLabel";
             this.GetStartedLabel.Size = new System.Drawing.Size(1172, 151);
             this.GetStartedLabel.TabIndex = 1;
             this.GetStartedLabel.Text = "Get Started";
-            this.GetStartedLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.GetStartedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CopyrightLabel
             // 
             this.CopyrightLabel.BackColor = System.Drawing.Color.Transparent;
-            this.CopyrightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.CopyrightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.CopyrightLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.CopyrightLabel.Location = new System.Drawing.Point(12, 682);
+            this.CopyrightLabel.Location = new System.Drawing.Point(12, 669);
             this.CopyrightLabel.Name = "CopyrightLabel";
-            this.CopyrightLabel.Size = new System.Drawing.Size(1296, 39);
+            this.CopyrightLabel.Size = new System.Drawing.Size(1296, 52);
             this.CopyrightLabel.TabIndex = 2;
             this.CopyrightLabel.Text = "© CoreX 2020. No rights reserved.";
             this.CopyrightLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Panel_fake_rectangle
+            // 
+            this.Panel_fake_rectangle.BackColor = System.Drawing.Color.Transparent;
+            this.Panel_fake_rectangle.Controls.Add(this.ScanPCLabel);
+            this.Panel_fake_rectangle.Location = new System.Drawing.Point(459, 526);
+            this.Panel_fake_rectangle.Name = "Panel_fake_rectangle";
+            this.Panel_fake_rectangle.Size = new System.Drawing.Size(403, 140);
+            this.Panel_fake_rectangle.TabIndex = 3;
+            this.Panel_fake_rectangle.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_fake_rectangle_Paint);
+            // 
+            // ScanPCLabel
+            // 
+            this.ScanPCLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ScanPCLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(173)))), ((int)(((byte)(117)))));
+            this.ScanPCLabel.Location = new System.Drawing.Point(0, -12);
+            this.ScanPCLabel.Name = "ScanPCLabel";
+            this.ScanPCLabel.Size = new System.Drawing.Size(403, 152);
+            this.ScanPCLabel.TabIndex = 4;
+            this.ScanPCLabel.Text = "Scan my PC";
+            this.ScanPCLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ScanPCLabel.Click += new System.EventHandler(this.ScanPCLabel_Click);
+            this.ScanPCLabel.MouseLeave += new System.EventHandler(this.ScanPCLabel_MouseLeave);
+            this.ScanPCLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ScanPCLabel_MouseMove);
             // 
             // GetStartedForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::PcGameChecker.Properties.Resources.appbackground1;
             this.ClientSize = new System.Drawing.Size(1320, 730);
+            this.Controls.Add(this.Panel_fake_rectangle);
             this.Controls.Add(this.CopyrightLabel);
             this.Controls.Add(this.GetStartedLabel);
             this.Controls.Add(this.CloseImage);
@@ -89,6 +118,7 @@
             this.Text = "GetStartedForm";
             this.Load += new System.EventHandler(this.GetStartedForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CloseImage)).EndInit();
+            this.Panel_fake_rectangle.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -98,5 +128,7 @@
         private System.Windows.Forms.PictureBox CloseImage;
         private System.Windows.Forms.Label GetStartedLabel;
         private System.Windows.Forms.Label CopyrightLabel;
+        private System.Windows.Forms.Panel Panel_fake_rectangle;
+        private System.Windows.Forms.Label ScanPCLabel;
     }
 }

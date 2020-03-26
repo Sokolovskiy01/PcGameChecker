@@ -15,7 +15,7 @@ namespace PcGameChecker
 {
 	public partial class Initialization_form : Form
 	{
-		private int progressvalue = 5;
+		private int progressvalue = 10;
 		public PrivateFontCollection pfc = new PrivateFontCollection();
 		public Initialization_form()
 		{
@@ -48,7 +48,8 @@ namespace PcGameChecker
 
 		private void timer1_Tick(object sender, EventArgs e)
 		{
-			progressvalue += 5;
+			//TODO check all required resourses
+			progressvalue += 10;
 			Progressbar.Value = progressvalue;
 			if (progressvalue == Progressbar.Maximum)
 			{
