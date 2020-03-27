@@ -39,6 +39,9 @@
             // 
             // CloseImage
             // 
+            this.CloseImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.CloseImage.BackColor = System.Drawing.Color.Transparent;
             this.CloseImage.BackgroundImage = global::PcGameChecker.Properties.Resources.closeg;
             this.CloseImage.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -46,6 +49,7 @@
             this.CloseImage.Location = new System.Drawing.Point(1283, 12);
             this.CloseImage.Name = "CloseImage";
             this.CloseImage.Size = new System.Drawing.Size(25, 25);
+            this.CloseImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.CloseImage.TabIndex = 0;
             this.CloseImage.TabStop = false;
             this.CloseImage.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -89,9 +93,9 @@
             // 
             this.ScanPCLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ScanPCLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(173)))), ((int)(((byte)(117)))));
-            this.ScanPCLabel.Location = new System.Drawing.Point(0, -12);
+            this.ScanPCLabel.Location = new System.Drawing.Point(0, -14);
             this.ScanPCLabel.Name = "ScanPCLabel";
-            this.ScanPCLabel.Size = new System.Drawing.Size(403, 152);
+            this.ScanPCLabel.Size = new System.Drawing.Size(403, 154);
             this.ScanPCLabel.TabIndex = 4;
             this.ScanPCLabel.Text = "Scan my PC";
             this.ScanPCLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -120,6 +124,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.CloseImage)).EndInit();
             this.Panel_fake_rectangle.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

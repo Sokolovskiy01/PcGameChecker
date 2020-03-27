@@ -114,9 +114,9 @@ namespace PcGameChecker
 			//richTextBox1.Text += nvgpu.FullName.Length.ToString();
 			richTextBox1.Text = "";
 			CustomFont();
-			//getcpu();
-			//getgpu();
-			//getOS();
+			getcpu();
+			getgpu();
+			getOS();
 			ErrorCode error;
 			Platform[] platforms = Cl.GetPlatformIDs(out error);
 			List<Device> devicesList = new List<Device>();

@@ -38,3 +38,4 @@ C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\Xamarin.Forms.Core.p
 C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\Xamarin.Forms.Core.xml
 C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\Xamarin.Forms.Xaml.pdb
 C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\Xamarin.Forms.Xaml.xml
+C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.AgreementForm.resources

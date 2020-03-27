@@ -33,6 +33,7 @@ namespace PcGameChecker
 			Program_title.Font = new Font(pfc.Families[0], Program_title.Font.Size);
 			Initializing.Font = new Font(pfc.Families[0], Initializing.Font.Size);
 
+			
 			Marshal.FreeCoTaskMem(data);
 		}
 

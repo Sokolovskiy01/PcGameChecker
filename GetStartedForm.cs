@@ -18,6 +18,7 @@ namespace PcGameChecker
 	{
 		public PrivateFontCollection pfc = new PrivateFontCollection();
 		Color bordercolor = new Color();
+		private AgreementForm agreement = new AgreementForm();
 		public GetStartedForm()
 		{
 			InitializeComponent();
@@ -73,7 +74,10 @@ namespace PcGameChecker
 
 		private void ScanPCLabel_Click(object sender, EventArgs e)
 		{
-			Close();
+			if(agreement.ShowDialog() == DialogResult.OK)
+			{
+				Close();
+			}
 		}
 	}
 }
