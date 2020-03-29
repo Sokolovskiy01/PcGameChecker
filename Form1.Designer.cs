@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Form));
             this.Button_getinfo = new System.Windows.Forms.Button();
             this.CpuBar = new CircularProgressBar.CircularProgressBar();
             this.cpu_usage = new System.Windows.Forms.Label();
@@ -72,7 +73,7 @@
             this.CpuBar.InnerColor = System.Drawing.Color.Transparent;
             this.CpuBar.InnerMargin = 2;
             this.CpuBar.InnerWidth = 1;
-            this.CpuBar.Location = new System.Drawing.Point(356, 203);
+            this.CpuBar.Location = new System.Drawing.Point(342, 202);
             this.CpuBar.MarqueeAnimationSpeed = 2000;
             this.CpuBar.Name = "CpuBar";
             this.CpuBar.OuterColor = System.Drawing.Color.Tomato;
@@ -99,9 +100,9 @@
             // 
             this.cpu_usage.BackColor = System.Drawing.Color.Transparent;
             this.cpu_usage.Font = new System.Drawing.Font("Comfortaa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cpu_usage.Location = new System.Drawing.Point(351, 466);
+            this.cpu_usage.Location = new System.Drawing.Point(342, 465);
             this.cpu_usage.Name = "cpu_usage";
-            this.cpu_usage.Size = new System.Drawing.Size(265, 29);
+            this.cpu_usage.Size = new System.Drawing.Size(260, 29);
             this.cpu_usage.TabIndex = 4;
             this.cpu_usage.Text = "CPU Usage :";
             this.cpu_usage.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -123,7 +124,7 @@
             this.RamBar.InnerColor = System.Drawing.Color.Transparent;
             this.RamBar.InnerMargin = 2;
             this.RamBar.InnerWidth = 1;
-            this.RamBar.Location = new System.Drawing.Point(682, 203);
+            this.RamBar.Location = new System.Drawing.Point(668, 202);
             this.RamBar.MarqueeAnimationSpeed = 2000;
             this.RamBar.Name = "RamBar";
             this.RamBar.OuterColor = System.Drawing.Color.Tomato;
@@ -156,7 +157,7 @@
             this.GpuBar.InnerColor = System.Drawing.Color.Transparent;
             this.GpuBar.InnerMargin = 2;
             this.GpuBar.InnerWidth = 1;
-            this.GpuBar.Location = new System.Drawing.Point(1008, 203);
+            this.GpuBar.Location = new System.Drawing.Point(994, 202);
             this.GpuBar.MarqueeAnimationSpeed = 500;
             this.GpuBar.Name = "GpuBar";
             this.GpuBar.OuterColor = System.Drawing.Color.Tomato;
@@ -182,7 +183,7 @@
             // 
             this.ram_usage.BackColor = System.Drawing.Color.Transparent;
             this.ram_usage.Font = new System.Drawing.Font("Comfortaa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ram_usage.Location = new System.Drawing.Point(682, 466);
+            this.ram_usage.Location = new System.Drawing.Point(668, 465);
             this.ram_usage.Name = "ram_usage";
             this.ram_usage.Size = new System.Drawing.Size(260, 29);
             this.ram_usage.TabIndex = 7;
@@ -193,9 +194,9 @@
             // 
             this.gpu_usage.BackColor = System.Drawing.Color.Transparent;
             this.gpu_usage.Font = new System.Drawing.Font("Comfortaa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.gpu_usage.Location = new System.Drawing.Point(1003, 171);
+            this.gpu_usage.Location = new System.Drawing.Point(989, 114);
             this.gpu_usage.Name = "gpu_usage";
-            this.gpu_usage.Size = new System.Drawing.Size(265, 29);
+            this.gpu_usage.Size = new System.Drawing.Size(265, 85);
             this.gpu_usage.TabIndex = 8;
             this.gpu_usage.Text = "VRAM";
             this.gpu_usage.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -235,9 +236,9 @@
             // 
             this.Sys_total_ram.BackColor = System.Drawing.Color.Transparent;
             this.Sys_total_ram.Font = new System.Drawing.Font("Comfortaa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Sys_total_ram.Location = new System.Drawing.Point(682, 171);
+            this.Sys_total_ram.Location = new System.Drawing.Point(668, 114);
             this.Sys_total_ram.Name = "Sys_total_ram";
-            this.Sys_total_ram.Size = new System.Drawing.Size(260, 29);
+            this.Sys_total_ram.Size = new System.Drawing.Size(260, 85);
             this.Sys_total_ram.TabIndex = 12;
             this.Sys_total_ram.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -245,9 +246,9 @@
             // 
             this.Sys_proc_name.BackColor = System.Drawing.Color.Transparent;
             this.Sys_proc_name.Font = new System.Drawing.Font("Comfortaa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Sys_proc_name.Location = new System.Drawing.Point(351, 171);
+            this.Sys_proc_name.Location = new System.Drawing.Point(342, 114);
             this.Sys_proc_name.Name = "Sys_proc_name";
-            this.Sys_proc_name.Size = new System.Drawing.Size(265, 29);
+            this.Sys_proc_name.Size = new System.Drawing.Size(260, 85);
             this.Sys_proc_name.TabIndex = 13;
             this.Sys_proc_name.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -257,7 +258,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1307, 654);
+            this.ClientSize = new System.Drawing.Size(1281, 654);
             this.Controls.Add(this.Sys_proc_name);
             this.Controls.Add(this.Sys_total_ram);
             this.Controls.Add(this.Comp_name);
@@ -270,6 +271,7 @@
             this.Controls.Add(this.CpuBar);
             this.Controls.Add(this.Button_getinfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main_Form";
             this.Text = "PcGameChecker";
             this.TopMost = true;

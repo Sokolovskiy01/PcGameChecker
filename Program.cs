@@ -12,12 +12,14 @@ namespace PcGameChecker
 {
 	static class Program
 	{
+		public static PrivateFontCollection Comfortaa = new PrivateFontCollection();
 		/// <summary>
 		/// The main entry point for the application.
 		/// </summary>
 		[STAThread]
 		static void Main()
 		{
+			Comfortaa.AddFontFile("Resources\\Comfortaa-VariableFont_wght.ttf");
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new Initialization_form());

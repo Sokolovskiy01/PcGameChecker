@@ -84,13 +84,13 @@ namespace PcGameChecker
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
-			int fontlenght = Properties.Resources.Comfortaa_VariableFont_wght.Length;
-			byte[] fontdata = Properties.Resources.Comfortaa_VariableFont_wght;
-			System.IntPtr data = Marshal.AllocCoTaskMem(fontlenght);
-			Marshal.Copy(fontdata, 0, data, fontlenght);
-			pfc.AddMemoryFont(data, fontlenght);
+			//int fontlenght = Properties.Resources.Comfortaa_VariableFont_wght.Length;
+			//byte[] fontdata = Properties.Resources.Comfortaa_VariableFont_wght;
+			//System.IntPtr data = Marshal.AllocCoTaskMem(fontlenght);
+			//Marshal.Copy(fontdata, 0, data, fontlenght);
+			//.AddMemoryFont(data, fontlenght);
 
-			Font Comfortaa = new Font(pfc.Families[0],this.Font.Size);
+			//pfc.AddFontFile("Resources\\Comfortaa-VariableFont_wght.ttf");
 
 			Sys_total_ram.Text = "Total RAM : " + TotalRam().ToString() + "MB";
 			BringToFront();
@@ -99,12 +99,8 @@ namespace PcGameChecker
 			CpuBar.Maximum = 100;
 			RamBar.Minimum = 0;
 			RamBar.Maximum = Convert.ToInt32(TotalRam());
+			Comp_name.Font = new Font(Program.Comfortaa.Families[0], Comp_name.Font.Size);
 			//ram_usage.Text = pccc.NextValue().ToString();
-		}
-
-		public void CustomFont()
-		{
-			Comp_name.Font = new Font(pfc.Families[0], Comp_name.Font.Size);
 		}
 
 		private void button1_Click(object sender, EventArgs e)
@@ -113,7 +109,6 @@ namespace PcGameChecker
 			//NvAPIWrapper.GPU.PhysicalGPU nvgpu = new NvAPIWrapper.GPU.PhysicalGPU(pghu_handler);
 			//richTextBox1.Text += nvgpu.FullName.Length.ToString();
 			richTextBox1.Text = "";
-			CustomFont();
 			getcpu();
 			getgpu();
 			getOS();

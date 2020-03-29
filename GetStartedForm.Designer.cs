@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GetStartedForm));
             this.CloseImage = new System.Windows.Forms.PictureBox();
             this.GetStartedLabel = new System.Windows.Forms.Label();
             this.CopyrightLabel = new System.Windows.Forms.Label();
@@ -100,6 +101,7 @@
             this.ScanPCLabel.Text = "Scan my PC";
             this.ScanPCLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.ScanPCLabel.Click += new System.EventHandler(this.ScanPCLabel_Click);
+            this.ScanPCLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ScanPCLabel_MouseDown);
             this.ScanPCLabel.MouseLeave += new System.EventHandler(this.ScanPCLabel_MouseLeave);
             this.ScanPCLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ScanPCLabel_MouseMove);
             // 
@@ -115,6 +117,7 @@
             this.Controls.Add(this.GetStartedLabel);
             this.Controls.Add(this.CloseImage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GetStartedForm";
