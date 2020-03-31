@@ -36,6 +36,8 @@
             this.Initializing = new System.Windows.Forms.Label();
             this.Progressbar = new System.Windows.Forms.ProgressBar();
             this.Program_title = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -46,7 +48,6 @@
             // 
             // timer1
             // 
-            this.timer1.Enabled = true;
             this.timer1.Interval = 400;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
@@ -54,6 +55,8 @@
             // 
             this.gradientPanel1.ColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(111)))), ((int)(((byte)(180)))));
             this.gradientPanel1.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(173)))), ((int)(((byte)(117)))));
+            this.gradientPanel1.Controls.Add(this.button2);
+            this.gradientPanel1.Controls.Add(this.button1);
             this.gradientPanel1.Controls.Add(this.Initializing);
             this.gradientPanel1.Controls.Add(this.Progressbar);
             this.gradientPanel1.Controls.Add(this.Program_title);
@@ -73,16 +76,18 @@
             this.Initializing.Size = new System.Drawing.Size(111, 25);
             this.Initializing.TabIndex = 3;
             this.Initializing.Text = "Initializing...";
+            this.Initializing.Visible = false;
             // 
             // Progressbar
             // 
             this.Progressbar.ForeColor = System.Drawing.Color.Black;
-            this.Progressbar.Location = new System.Drawing.Point(76, 227);
+            this.Progressbar.Location = new System.Drawing.Point(82, 227);
             this.Progressbar.Name = "Progressbar";
             this.Progressbar.Size = new System.Drawing.Size(498, 17);
             this.Progressbar.Step = 1;
             this.Progressbar.TabIndex = 2;
             this.Progressbar.Value = 10;
+            this.Progressbar.Visible = false;
             // 
             // Program_title
             // 
@@ -94,6 +99,26 @@
             this.Program_title.TabIndex = 1;
             this.Program_title.Text = "PC Game Cheker";
             this.Program_title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(50, 227);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(161, 57);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Add Game";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(440, 227);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(161, 57);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Run app";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Initialization_form
             // 
@@ -122,5 +147,7 @@
         private System.Windows.Forms.Label Initializing;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

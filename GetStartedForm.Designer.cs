@@ -61,9 +61,9 @@
             // 
             this.GetStartedLabel.BackColor = System.Drawing.Color.Transparent;
             this.GetStartedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 66F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.GetStartedLabel.Location = new System.Drawing.Point(74, 29);
+            this.GetStartedLabel.Location = new System.Drawing.Point(59, 29);
             this.GetStartedLabel.Name = "GetStartedLabel";
-            this.GetStartedLabel.Size = new System.Drawing.Size(1172, 151);
+            this.GetStartedLabel.Size = new System.Drawing.Size(1203, 151);
             this.GetStartedLabel.TabIndex = 1;
             this.GetStartedLabel.Text = "Get Started";
             this.GetStartedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -124,6 +124,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GetStartedForm";
             this.Load += new System.EventHandler(this.GetStartedForm_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GetStartedForm_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GetStartedForm_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.CloseImage)).EndInit();
             this.Panel_fake_rectangle.ResumeLayout(false);
             this.ResumeLayout(false);

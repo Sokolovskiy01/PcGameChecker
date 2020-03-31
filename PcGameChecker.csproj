@@ -99,6 +99,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Game.cs" />
+    <Compile Include="GameAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameAdd.Designer.cs">
+      <DependentUpon>GameAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="GetStartedForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameAdd.resx">
+      <DependentUpon>GameAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GetStartedForm.resx">
       <DependentUpon>GetStartedForm.cs</DependentUpon>
@@ -156,9 +165,6 @@
   <ItemGroup>
     <None Include="Resources\19255.ttf" />
     <None Include="Resources\Comfortaa-VariableFont_wght.ttf" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="gradient.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Comfortaa font.bmp" />

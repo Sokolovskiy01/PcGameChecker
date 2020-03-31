@@ -57,5 +57,20 @@ namespace PcGameChecker
 				Close();
 			}
 		}
+
+		private void button1_Click_1(object sender, EventArgs e)
+		{
+			Program.mode = 2;
+			Close();
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			button2.Visible = false;
+			button1.Visible = false;
+			Progressbar.Visible = true;
+			Initializing.Visible = true;
+			timer1.Enabled = true;
+		}
 	}
 }

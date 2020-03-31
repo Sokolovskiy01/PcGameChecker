@@ -21,6 +21,7 @@ namespace PcGameChecker
 		Color bordercolor = new Color();
 		Color buttoncolor = new Color();
 		private AgreementForm agreement = new AgreementForm();
+		Point lastPoint;
 		public GetStartedForm()
 		{
 			InitializeComponent();
@@ -89,6 +90,20 @@ namespace PcGameChecker
 		{
 			ScanPCLabel.ForeColor = Color.FromArgb(37, 111, 179);
 			buttoncolor = Color.LightGray;
+		}
+
+		private void GetStartedForm_MouseMove(object sender, MouseEventArgs e)
+		{
+			if (e.Button == MouseButtons.Left)
+			{
+				this.Left += e.X - lastPoint.X;
+				this.Top += e.Y - lastPoint.Y;
+			}
+		}
+		
+		private void GetStartedForm_MouseDown(object sender, MouseEventArgs e)
+		{
+			lastPoint = new Point(e.X, e.Y);
 		}
 	}
 }

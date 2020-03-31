@@ -112,6 +112,16 @@ namespace PcGameChecker
 			getcpu();
 			getgpu();
 			getOS();
+			double a = 0;
+			DriveInfo[] allDrives = DriveInfo.GetDrives();
+			foreach (DriveInfo MyDriveInfo in allDrives)
+			{
+				if (MyDriveInfo.IsReady == true)
+				{
+					a = (MyDriveInfo.AvailableFreeSpace / 1024) / 1024 / 1024;
+					richTextBox1.Text += MyDriveInfo.Name + " : " + a.ToString("#.##") + " GB avilable\n";
+				}
+			}
 			ErrorCode error;
 			Platform[] platforms = Cl.GetPlatformIDs(out error);
 			List<Device> devicesList = new List<Device>();
