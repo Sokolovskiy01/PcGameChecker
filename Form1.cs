@@ -84,14 +84,6 @@ namespace PcGameChecker
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
-			//int fontlenght = Properties.Resources.Comfortaa_VariableFont_wght.Length;
-			//byte[] fontdata = Properties.Resources.Comfortaa_VariableFont_wght;
-			//System.IntPtr data = Marshal.AllocCoTaskMem(fontlenght);
-			//Marshal.Copy(fontdata, 0, data, fontlenght);
-			//.AddMemoryFont(data, fontlenght);
-
-			//pfc.AddFontFile("Resources\\Comfortaa-VariableFont_wght.ttf");
-
 			Sys_total_ram.Text = "Total RAM : " + TotalRam().ToString() + "MB";
 			BringToFront();
 			SendToBack();

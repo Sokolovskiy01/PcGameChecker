@@ -157,13 +157,14 @@
             // 
             // ConfirmGame
             // 
+            this.ConfirmGame.BackColor = System.Drawing.SystemColors.Control;
             this.ConfirmGame.Location = new System.Drawing.Point(704, 453);
             this.ConfirmGame.Margin = new System.Windows.Forms.Padding(4);
             this.ConfirmGame.Name = "ConfirmGame";
             this.ConfirmGame.Size = new System.Drawing.Size(287, 60);
             this.ConfirmGame.TabIndex = 12;
             this.ConfirmGame.Text = "Confirm Game";
-            this.ConfirmGame.UseVisualStyleBackColor = true;
+            this.ConfirmGame.UseVisualStyleBackColor = false;
             this.ConfirmGame.Click += new System.EventHandler(this.ConfirmGame_Click);
             // 
             // label6

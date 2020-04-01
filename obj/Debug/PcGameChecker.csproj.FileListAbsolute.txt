@@ -40,3 +40,4 @@ C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\Xamarin.Forms.Xaml.x
 C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.AgreementForm.resources
 C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.csprojAssemblyReference.cache
 C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.GameADD.resources
+C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.ScanForm.resources

@@ -16,8 +16,6 @@ namespace PcGameChecker
 {
 	public partial class GetStartedForm : Form
 	{
-		public PrivateFontCollection pfc = new PrivateFontCollection();
-		public PrivateFontCollection pfc1 = new PrivateFontCollection();
 		Color bordercolor = new Color();
 		Color buttoncolor = new Color();
 		private AgreementForm agreement = new AgreementForm();
@@ -28,13 +26,8 @@ namespace PcGameChecker
 		}
 		private void GetStartedForm_Load(object sender, EventArgs e)
 		{
-			//int fontlenght = Properties.Resources.Comfortaa_VariableFont_wght.Length;
-			//byte[] fontdata = Properties.Resources.Comfortaa_VariableFont_wght;
-			//System.IntPtr data = Marshal.AllocCoTaskMem(fontlenght);
-			//Marshal.Copy(fontdata, 0, data, fontlenght);
-			//pfc.AddMemoryFont(data, fontlenght);
-
-			//pfc.AddFontFile("Resources\\Comfortaa-VariableFont_wght.ttf");
+			BringToFront();
+			SendToBack();
 
 			bordercolor = Color.FromArgb(36, 173, 117);
 			buttoncolor = Color.White;
@@ -46,7 +39,7 @@ namespace PcGameChecker
 		}
 		private void pictureBox1_Click(object sender, EventArgs e)
 		{
-			Close();
+			Application.Exit();
 		}
 		private void CloseImage_MouseLeave(object sender, EventArgs e)
 		{

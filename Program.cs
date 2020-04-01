@@ -12,6 +12,7 @@ namespace PcGameChecker
 {
 	static class Program
 	{
+		public static CurrentMachine CM = new CurrentMachine();
 		public static PrivateFontCollection Comfortaa = new PrivateFontCollection();
 		public static int mode { get; set; }
 		/// <summary>
@@ -32,6 +33,7 @@ namespace PcGameChecker
 					break;
 				default:
 					Application.Run(new GetStartedForm());
+					Application.Run(new ScanForm());
 					Application.Run(new Main_Form());
 					break;
 			}
