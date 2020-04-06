@@ -16,6 +16,7 @@ namespace PcGameChecker
         private uint Year;
         private string Genre;
         private Image Poster;
+        private Image Icon;
         private string Req_OS;
         private string Req_OS_Architecture;
         private string Req_disk_space;
@@ -34,14 +35,15 @@ namespace PcGameChecker
         private uint Rec_Processor_Clock; // Mhz
         private uint Rec_Graphics_VRAM; // MB
         private uint Rec_Graphics_Gpu_Clock;
-        public Game(string g_name, string g_desc, uint g_year, string g_genre, Image g_post_dir, string g_os, uint g_meta, double g_user_score,
+        public Game(string g_name, string g_desc, uint g_year, string g_genre, Image g_post, Image g_icon, string g_os, uint g_meta, double g_user_score,
             string g_osa, string g_ds, uint g_mp_cores, uint g_mp_threads, uint g_mp_clock_mhz, uint g_mg_vram, uint g_mg_clock)
         {
             Name = g_name;
             Description = g_desc;
             Year = g_year;
             Genre = g_genre;
-            Poster = g_post_dir;
+            Poster = g_post;
+            Icon = g_icon;
             Req_OS = g_os;
             Req_OS_Architecture = g_osa;
             Req_disk_space = g_ds;

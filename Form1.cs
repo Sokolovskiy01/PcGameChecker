@@ -71,7 +71,20 @@ namespace PcGameChecker
 				}
 			}
 		}
-
+		private void getCM()
+		{
+			richTextBox1.Text += "System name : " + Program.CM.SystemName + "\n";
+			richTextBox1.Text += "Ram : " + Program.CM.RamCapacity.ToString() +"\n";
+			richTextBox1.Text += "Operation system : " + Program.CM.SystemOS + "\n";
+			richTextBox1.Text += "System architecture : " + Program.CM.SystemArchitecture + "\n";
+			richTextBox1.Text += "Processor --------- \n" + "Name : " + Program.CM.Processor.Name + "\n";
+			richTextBox1.Text += "Number of cores : " + Program.CM.Processor.NumberOfCores.ToString() + "\n";
+			richTextBox1.Text += "Number of threads : " + Program.CM.Processor.ThreadCount.ToString() + "\n";
+			richTextBox1.Text += "Max clock speed : " + Program.CM.Processor.MaxClockSpeed.ToString() + "\n";
+			richTextBox1.Text += "Graphics card ---------- \n" + "Name : " + Program.CM.GraphicsCard.Name + "\n";
+			richTextBox1.Text += "Vram : " + Program.CM.GraphicsCard.Vram.ToString() + "\n";
+			richTextBox1.Text += "Max clock frequency : " + Program.CM.GraphicsCard.MaxClockFrequency.ToString() + "\n";
+		}
 		public uint TotalRam()
 		{
 			ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT MaxCapacity FROM Win32_PhysicalMemoryArray");
@@ -84,6 +97,7 @@ namespace PcGameChecker
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
+			getCM();
 			Sys_total_ram.Text = "Total RAM : " + TotalRam().ToString() + "MB";
 			BringToFront();
 			SendToBack();
@@ -92,6 +106,7 @@ namespace PcGameChecker
 			RamBar.Minimum = 0;
 			RamBar.Maximum = Convert.ToInt32(TotalRam());
 			Comp_name.Font = new Font(Program.Comfortaa.Families[0], Comp_name.Font.Size);
+
 			//ram_usage.Text = pccc.NextValue().ToString();
 		}
 

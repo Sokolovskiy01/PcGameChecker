@@ -21,16 +21,6 @@ namespace PcGameChecker
         {
             InitializeComponent();
         }
-
-        private void gameName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
         private void GameADD_Load(object sender, EventArgs e)
         {
 
@@ -45,11 +35,17 @@ namespace PcGameChecker
         {
             if(OpenGamePicture.ShowDialog() == DialogResult.OK)
             {
-                Image tmp = Image.FromFile(OpenGamePicture.FileName);
-                pictureBox1.Height = tmp.Height;
-                pictureBox1.Width = tmp.Width;
-                pictureBox1.Image = tmp;
-                
+                pictureBox1.BackgroundImage = Image.FromFile(OpenGamePicture.FileName);
+                pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            }
+        }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+            if(OpenGameIcon.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox2.BackgroundImage = Image.FromFile(OpenGameIcon.FileName);
+                pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
             }
         }
     }

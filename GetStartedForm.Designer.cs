@@ -111,6 +111,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::PcGameChecker.Properties.Resources.appbackground1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1320, 730);
             this.Controls.Add(this.Panel_fake_rectangle);
             this.Controls.Add(this.CopyrightLabel);

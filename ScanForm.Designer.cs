@@ -112,6 +112,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ScanForm";
             this.Opacity = 0D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ScanForm";
             this.Load += new System.EventHandler(this.ScanForm_Load);
             this.Shown += new System.EventHandler(this.ScanForm_Shown);

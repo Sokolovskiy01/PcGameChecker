@@ -14,7 +14,6 @@ namespace PcGameChecker
 {
 	public partial class ScanForm : Form
 	{
-		private CurrentMachine cm = new CurrentMachine();
 		public ScanForm()
 		{
 			InitializeComponent();
@@ -29,9 +28,9 @@ namespace PcGameChecker
 			{
 				foreach (var myProperty in myManagementClass.Properties)
 				{
-					if (myProperty.Name == "Caption") cm.SystemOS = obj.Properties[myProperty.Name].Value.ToString();
-					if (myProperty.Name == "Description") cm.SystemName = obj.Properties[myProperty.Name].Value.ToString();
-					if (myProperty.Name == "OSArchitecture") cm.SystemArchitecture = obj.Properties[myProperty.Name].Value.ToString();
+					if (myProperty.Name == "Caption") Program.CM.SystemOS = obj.Properties[myProperty.Name].Value.ToString();
+					if (myProperty.Name == "Description") Program.CM.SystemName = obj.Properties[myProperty.Name].Value.ToString();
+					if (myProperty.Name == "OSArchitecture") Program.CM.SystemArchitecture = obj.Properties[myProperty.Name].Value.ToString();
 				}
 			}
 			Progressbar.Value += 30;
@@ -58,10 +57,10 @@ namespace PcGameChecker
 			{
 				foreach (var myProperty in myManagementClass.Properties)
 				{
-					if (myProperty.Name == "Name") cm.Processor.Name = obj.Properties[myProperty.Name].Value.ToString();
-					if (myProperty.Name == "NumberOfCores") cm.Processor.NumberOfCores = Convert.ToUInt32(obj.Properties[myProperty.Name].Value);
-					if (myProperty.Name == "ThreadCount") cm.Processor.ThreadCount = Convert.ToUInt32(obj.Properties[myProperty.Name].Value);
-					if (myProperty.Name == "MaxClockSpeed") cm.Processor.ThreadCount = Convert.ToUInt32(obj.Properties[myProperty.Name].Value);
+					if (myProperty.Name == "Name") Program.CM.Processor.Name = obj.Properties[myProperty.Name].Value.ToString();
+					if (myProperty.Name == "NumberOfCores") Program.CM.Processor.NumberOfCores = Convert.ToUInt32(obj.Properties[myProperty.Name].Value);
+					if (myProperty.Name == "ThreadCount") Program.CM.Processor.ThreadCount = Convert.ToUInt32(obj.Properties[myProperty.Name].Value);
+					if (myProperty.Name == "MaxClockSpeed") Program.CM.Processor.MaxClockSpeed = Convert.ToUInt32(obj.Properties[myProperty.Name].Value);
 				}
 			}
 			Progressbar.Value += 30;
@@ -76,11 +75,11 @@ namespace PcGameChecker
 				//richTextBox1.Text += "..............................................\n";
 				foreach (var myProperty in mc.Properties)
 				{
-					if (myProperty.Name == "Caption") cm.GraphicsCard.Name = obj.Properties[myProperty.Name].Value.ToString();
-					if (myProperty.Name == "AdapterRAM") cm.GraphicsCard.Vram = Convert.ToUInt64(obj.Properties[myProperty.Name].Value) / 1048576;
-					if (myProperty.Name == "CurrentRefreshRate") cm.GraphicsCard.CurrentRefreshRate = Convert.ToUInt32(obj.Properties[myProperty.Name].Value);
-					if (myProperty.Name == "CurrentHorizontalResolution") cm.GraphicsCard.CurrentHorizontalResolution = Convert.ToUInt32(obj.Properties[myProperty.Name].Value);
-					if (myProperty.Name == "CurrentVerticalResolution") cm.GraphicsCard.CurrentVerticalResolution = Convert.ToUInt32(obj.Properties[myProperty.Name].Value);
+					if (myProperty.Name == "Caption") Program.CM.GraphicsCard.Name = obj.Properties[myProperty.Name].Value.ToString();
+					if (myProperty.Name == "AdapterRAM") Program.CM.GraphicsCard.Vram = Convert.ToUInt64(obj.Properties[myProperty.Name].Value) / 1048576;
+					if (myProperty.Name == "CurrentRefreshRate") Program.CM.GraphicsCard.CurrentRefreshRate = Convert.ToUInt32(obj.Properties[myProperty.Name].Value);
+					if (myProperty.Name == "CurrentHorizontalResolution") Program.CM.GraphicsCard.CurrentHorizontalResolution = Convert.ToUInt32(obj.Properties[myProperty.Name].Value);
+					if (myProperty.Name == "CurrentVerticalResolution") Program.CM.GraphicsCard.CurrentVerticalResolution = Convert.ToUInt32(obj.Properties[myProperty.Name].Value);
 				}
 			}
 			Progressbar.Value += 20;
@@ -100,7 +99,7 @@ namespace PcGameChecker
 
 			foreach (var vdev in devicesList)
 			{
-				cm.GraphicsCard.MaxClockFrequency = Cl.GetDeviceInfo(vdev, DeviceInfo.MaxClockFrequency, out error).CastTo<uint>();
+				Program.CM.GraphicsCard.MaxClockFrequency = Cl.GetDeviceInfo(vdev, DeviceInfo.MaxClockFrequency, out error).CastTo<uint>();
 			}
 			Progressbar.Value += 5;
 			
@@ -115,7 +114,7 @@ namespace PcGameChecker
 		{
 			getOS(); // 40
 			Progressbar.Update();
-			cm.RamCapacity = TotalRam(); // 45
+			Program.CM.RamCapacity = TotalRam(); // 45
 			Progressbar.Update();
 			getcpu(); // 75
 			Progressbar.Update();
