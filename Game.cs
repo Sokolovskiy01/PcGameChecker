@@ -11,30 +11,30 @@ namespace PcGameChecker
     [Serializable]
     class Game
     {
-        private string Name;
-        private string Description;
-        private uint Year;
-        private string Genre;
-        private Image Poster;
-        private Image Icon;
-        private string Req_OS;
-        private string Req_OS_Architecture;
-        private string Req_disk_space;
+        public string Name;
+        public string Description;
+        public uint Year;
+        public string Genre;
+        public Image Poster;
+        public Image Icon;
+        public string Req_OS;
+        public string Req_OS_Architecture;
+        public string Req_disk_space;
 
-        private uint metacritic;
-        private double user_score;
+        public uint metacritic;
+        public double user_score;
 
-        private uint Min_Processor_Cores;
-        private uint Min_Processor_Threads;
-        private uint Min_Processor_Clock; // Mhz
-        private uint Min_Graphics_VRAM; // MB
-        private uint Min_Graphics_Gpu_Clock;
+        public uint Min_Processor_Cores;
+        public uint Min_Processor_Threads;
+        public uint Min_Processor_Clock; // Mhz
+        public uint Min_Graphics_VRAM; // MB
+        public uint Min_Graphics_Gpu_Clock;
 
-        private uint Rec_Processor_Cores;
-        private uint Rec_Processor_Threads;
-        private uint Rec_Processor_Clock; // Mhz
-        private uint Rec_Graphics_VRAM; // MB
-        private uint Rec_Graphics_Gpu_Clock;
+        public uint Rec_Processor_Cores;
+        public uint Rec_Processor_Threads;
+        public uint Rec_Processor_Clock; // Mhz
+        public uint Rec_Graphics_VRAM; // MB
+        public uint Rec_Graphics_Gpu_Clock;
         public Game(string g_name, string g_desc, uint g_year, string g_genre, Image g_post, Image g_icon, string g_os, uint g_meta, double g_user_score,
             string g_osa, string g_ds, uint g_mp_cores, uint g_mp_threads, uint g_mp_clock_mhz, uint g_mg_vram, uint g_mg_clock)
         {

@@ -36,8 +36,6 @@
             this.YearGame = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.Req_OS = new System.Windows.Forms.TextBox();
-            this.Req_OS_Ar = new System.Windows.Forms.TextBox();
             this.ConfirmGame = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -61,18 +59,21 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.Req_Graphics_Gpu_Clock = new System.Windows.Forms.TextBox();
+            this.Req_Graphics_VRAM = new System.Windows.Forms.TextBox();
+            this.Req_Processor_Clock = new System.Windows.Forms.TextBox();
+            this.Req_Processor_Threads = new System.Windows.Forms.TextBox();
+            this.Req_Processor_Cores = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.User_rate = new System.Windows.Forms.TextBox();
+            this.Metacritics = new System.Windows.Forms.TextBox();
             this.OpenGameIcon = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.ExistingGamesRichTextBox = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -151,27 +152,10 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Req OS Architecture (string)\r\n";
             // 
-            // Req_OS
-            // 
-            this.Req_OS.Location = new System.Drawing.Point(308, 159);
-            this.Req_OS.Margin = new System.Windows.Forms.Padding(4);
-            this.Req_OS.Name = "Req_OS";
-            this.Req_OS.Size = new System.Drawing.Size(205, 22);
-            this.Req_OS.TabIndex = 10;
-            // 
-            // Req_OS_Ar
-            // 
-            this.Req_OS_Ar.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.Req_OS_Ar.Location = new System.Drawing.Point(308, 194);
-            this.Req_OS_Ar.Margin = new System.Windows.Forms.Padding(4);
-            this.Req_OS_Ar.Name = "Req_OS_Ar";
-            this.Req_OS_Ar.Size = new System.Drawing.Size(205, 22);
-            this.Req_OS_Ar.TabIndex = 11;
-            // 
             // ConfirmGame
             // 
             this.ConfirmGame.BackColor = System.Drawing.SystemColors.Control;
-            this.ConfirmGame.Location = new System.Drawing.Point(395, 546);
+            this.ConfirmGame.Location = new System.Drawing.Point(404, 614);
             this.ConfirmGame.Margin = new System.Windows.Forms.Padding(4);
             this.ConfirmGame.Name = "ConfirmGame";
             this.ConfirmGame.Size = new System.Drawing.Size(287, 60);
@@ -290,7 +274,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(574, 334);
+            this.pictureBox1.Location = new System.Drawing.Point(562, 237);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(180, 154);
@@ -319,7 +303,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(571, 501);
+            this.label13.Location = new System.Drawing.Point(559, 418);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(183, 17);
@@ -330,7 +314,6 @@
             // OpenGamePicture
             // 
             this.OpenGamePicture.FileName = "GamePoster";
-            this.OpenGamePicture.Filter = "\"Image File (*.jpg; *.jpeg; *bmp;) |*.jpg; *.jpeg; *bmp; \"";
             // 
             // label14
             // 
@@ -382,51 +365,51 @@
             this.label18.TabIndex = 30;
             this.label18.Text = "Req_Processor_Cores (uint)";
             // 
-            // textBox1
+            // Req_Graphics_Gpu_Clock
             // 
-            this.textBox1.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.textBox1.Location = new System.Drawing.Point(832, 194);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(205, 22);
-            this.textBox1.TabIndex = 39;
+            this.Req_Graphics_Gpu_Clock.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.Req_Graphics_Gpu_Clock.Location = new System.Drawing.Point(832, 194);
+            this.Req_Graphics_Gpu_Clock.Margin = new System.Windows.Forms.Padding(4);
+            this.Req_Graphics_Gpu_Clock.Name = "Req_Graphics_Gpu_Clock";
+            this.Req_Graphics_Gpu_Clock.Size = new System.Drawing.Size(205, 22);
+            this.Req_Graphics_Gpu_Clock.TabIndex = 39;
             // 
-            // textBox2
+            // Req_Graphics_VRAM
             // 
-            this.textBox2.Location = new System.Drawing.Point(832, 159);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(205, 22);
-            this.textBox2.TabIndex = 38;
+            this.Req_Graphics_VRAM.Location = new System.Drawing.Point(832, 159);
+            this.Req_Graphics_VRAM.Margin = new System.Windows.Forms.Padding(4);
+            this.Req_Graphics_VRAM.Name = "Req_Graphics_VRAM";
+            this.Req_Graphics_VRAM.Size = new System.Drawing.Size(205, 22);
+            this.Req_Graphics_VRAM.TabIndex = 38;
             // 
-            // textBox3
+            // Req_Processor_Clock
             // 
-            this.textBox3.Location = new System.Drawing.Point(832, 124);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(205, 22);
-            this.textBox3.TabIndex = 37;
+            this.Req_Processor_Clock.Location = new System.Drawing.Point(832, 124);
+            this.Req_Processor_Clock.Margin = new System.Windows.Forms.Padding(4);
+            this.Req_Processor_Clock.Name = "Req_Processor_Clock";
+            this.Req_Processor_Clock.Size = new System.Drawing.Size(205, 22);
+            this.Req_Processor_Clock.TabIndex = 37;
             // 
-            // textBox4
+            // Req_Processor_Threads
             // 
-            this.textBox4.Location = new System.Drawing.Point(832, 89);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(205, 22);
-            this.textBox4.TabIndex = 36;
+            this.Req_Processor_Threads.Location = new System.Drawing.Point(832, 89);
+            this.Req_Processor_Threads.Margin = new System.Windows.Forms.Padding(4);
+            this.Req_Processor_Threads.Name = "Req_Processor_Threads";
+            this.Req_Processor_Threads.Size = new System.Drawing.Size(205, 22);
+            this.Req_Processor_Threads.TabIndex = 36;
             // 
-            // textBox5
+            // Req_Processor_Cores
             // 
-            this.textBox5.Location = new System.Drawing.Point(832, 54);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(205, 22);
-            this.textBox5.TabIndex = 35;
+            this.Req_Processor_Cores.Location = new System.Drawing.Point(832, 54);
+            this.Req_Processor_Cores.Margin = new System.Windows.Forms.Padding(4);
+            this.Req_Processor_Cores.Name = "Req_Processor_Cores";
+            this.Req_Processor_Cores.Size = new System.Drawing.Size(205, 22);
+            this.Req_Processor_Cores.TabIndex = 35;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(554, 267);
+            this.label19.Location = new System.Drawing.Point(39, 581);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(199, 17);
@@ -436,37 +419,33 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(554, 232);
+            this.label20.Location = new System.Drawing.Point(39, 546);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(163, 17);
             this.label20.TabIndex = 40;
             this.label20.Text = "Metacritics (0-100) (uint)";
             // 
-            // textBox6
+            // User_rate
             // 
-            this.textBox6.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.textBox6.Location = new System.Drawing.Point(832, 264);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(205, 22);
-            this.textBox6.TabIndex = 43;
+            this.User_rate.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.User_rate.Location = new System.Drawing.Point(308, 578);
+            this.User_rate.Margin = new System.Windows.Forms.Padding(4);
+            this.User_rate.Name = "User_rate";
+            this.User_rate.Size = new System.Drawing.Size(205, 22);
+            this.User_rate.TabIndex = 43;
             // 
-            // textBox7
+            // Metacritics
             // 
-            this.textBox7.Location = new System.Drawing.Point(832, 229);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(205, 22);
-            this.textBox7.TabIndex = 42;
-            // 
-            // OpenGameIcon
-            // 
-            this.OpenGameIcon.Filter = "\"Image File (*.jpg; *.jpeg; *bmp;) |*.jpg; *.jpeg; *bmp; \"";
+            this.Metacritics.Location = new System.Drawing.Point(308, 543);
+            this.Metacritics.Margin = new System.Windows.Forms.Padding(4);
+            this.Metacritics.Name = "Metacritics";
+            this.Metacritics.Size = new System.Drawing.Size(205, 22);
+            this.Metacritics.TabIndex = 42;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(877, 372);
+            this.pictureBox2.Location = new System.Drawing.Point(905, 277);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(67, 63);
@@ -476,7 +455,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(829, 501);
+            this.label21.Location = new System.Drawing.Point(868, 418);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(157, 17);
@@ -484,22 +463,63 @@
             this.label21.Text = "PRESS TO LOAD ICON";
             this.label21.Click += new System.EventHandler(this.label21_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Windows 10",
+            "Windows 8.1",
+            "Windows 8",
+            "Windows 7",
+            "Windows Vista",
+            "Windows XP",
+            "Windows ME",
+            "Windows 2000",
+            "Windows 98",
+            "Windows 95"});
+            this.comboBox1.Location = new System.Drawing.Point(308, 159);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(205, 24);
+            this.comboBox1.TabIndex = 46;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "64",
+            "32"});
+            this.comboBox2.Location = new System.Drawing.Point(308, 194);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(205, 24);
+            this.comboBox2.TabIndex = 47;
+            // 
+            // ExistingGamesRichTextBox
+            // 
+            this.ExistingGamesRichTextBox.Location = new System.Drawing.Point(562, 467);
+            this.ExistingGamesRichTextBox.Name = "ExistingGamesRichTextBox";
+            this.ExistingGamesRichTextBox.Size = new System.Drawing.Size(475, 131);
+            this.ExistingGamesRichTextBox.TabIndex = 48;
+            this.ExistingGamesRichTextBox.Text = "";
+            // 
             // GameADD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 619);
+            this.ClientSize = new System.Drawing.Size(1067, 687);
+            this.Controls.Add(this.ExistingGamesRichTextBox);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.User_rate);
+            this.Controls.Add(this.Metacritics);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.Req_Graphics_Gpu_Clock);
+            this.Controls.Add(this.Req_Graphics_VRAM);
+            this.Controls.Add(this.Req_Processor_Clock);
+            this.Controls.Add(this.Req_Processor_Threads);
+            this.Controls.Add(this.Req_Processor_Cores);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label16);
@@ -522,8 +542,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.ConfirmGame);
-            this.Controls.Add(this.Req_OS_Ar);
-            this.Controls.Add(this.Req_OS);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.YearGame);
@@ -534,7 +552,7 @@
             this.Controls.Add(this.gameName);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GameADD";
-            this.Text = "b";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.GameADD_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -552,8 +570,6 @@
         private System.Windows.Forms.TextBox YearGame;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox Req_OS;
-        private System.Windows.Forms.TextBox Req_OS_Ar;
         private System.Windows.Forms.Button ConfirmGame;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -577,17 +593,20 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox Req_Graphics_Gpu_Clock;
+        private System.Windows.Forms.TextBox Req_Graphics_VRAM;
+        private System.Windows.Forms.TextBox Req_Processor_Clock;
+        private System.Windows.Forms.TextBox Req_Processor_Threads;
+        private System.Windows.Forms.TextBox Req_Processor_Cores;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox User_rate;
+        private System.Windows.Forms.TextBox Metacritics;
         private System.Windows.Forms.OpenFileDialog OpenGameIcon;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.RichTextBox ExistingGamesRichTextBox;
     }
 }
