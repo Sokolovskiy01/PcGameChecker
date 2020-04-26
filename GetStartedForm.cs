@@ -35,7 +35,6 @@ namespace PcGameChecker
 			GetStartedLabel.Font = new Font(Program.Comfortaa.Families[0], GetStartedLabel.Font.Size);
 			CopyrightLabel.Font = new Font(Program.Comfortaa.Families[0], CopyrightLabel.Font.Size);
 			ScanPCLabel.Font = new Font(Program.Comfortaa.Families[0], ScanPCLabel.Font.Size);
-			//ExtendedGraphics
 		}
 		private void pictureBox1_Click(object sender, EventArgs e)
 		{

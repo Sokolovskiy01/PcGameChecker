@@ -42,7 +42,7 @@
             // 
             // MainPanel
             // 
-            this.MainPanel.BackColor = System.Drawing.Color.White;
+            this.MainPanel.BackColor = System.Drawing.Color.Transparent;
             this.MainPanel.Controls.Add(this.PanelProceed);
             this.MainPanel.Controls.Add(this.PanelCancel);
             this.MainPanel.Controls.Add(this.AgeementLabel);
@@ -117,7 +117,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(730, 480);
             this.Controls.Add(this.MainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -125,6 +125,7 @@
             this.Name = "AgreementForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgreementForm";
+            this.TransparencyKey = System.Drawing.Color.LightPink;
             this.Load += new System.EventHandler(this.AgreementForm_Load);
             this.MainPanel.ResumeLayout(false);
             this.PanelProceed.ResumeLayout(false);

@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 namespace PcGameChecker
 {
+
 	public partial class AgreementForm : Form
 	{
 		Color BorderMainColor = new Color();
@@ -50,13 +51,26 @@ namespace PcGameChecker
 			CancelLabel.Font = new Font(Program.Comfortaa.Families[0], CancelLabel.Font.Size);
 			ProceedLabel.Font = new Font(Program.Comfortaa.Families[0], ProceedLabel.Font.Size);
 			AgeementLabel.Font = new Font(Program.Comfortaa.Families[0], AgeementLabel.Font.Size);
+			SetRoundedShape(this, 24);
 		}
-
+		static void SetRoundedShape(Control control, int radius)
+		{
+			System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
+			path.AddLine(radius, 0, control.Width - radius, 0);
+			path.AddArc(control.Width - radius, 0, radius, radius, 270, 90);
+			path.AddLine(control.Width, radius, control.Width, control.Height - radius);
+			path.AddArc(control.Width - radius, control.Height - radius, radius, radius, 0, 90);
+			path.AddLine(control.Width - radius, control.Height, radius, control.Height);
+			path.AddArc(0, control.Height - radius, radius, radius, 90, 90);
+			path.AddLine(0, control.Height - radius, 0, radius);
+			path.AddArc(0, 0, radius, radius, 180, 90);
+			control.Region = new Region(path);
+		}
 		private void PaintMiain_OnPaint(object sender, PaintEventArgs e)
 		{
 			Graphics g = e.Graphics;
 			g.SmoothingMode = SmoothingMode.AntiAlias;
-			g.FillRoundedRectangle(new SolidBrush(BorderMainColor), 0, 0, MainPanel.Width - 1, MainPanel.Height - 1, 12);
+			//g.FillRoundedRectangle(new SolidBrush(BorderMainColor), 0, 0, MainPanel.Width - 1, MainPanel.Height - 1, 12);
 			g.FillRoundedRectangle(new SolidBrush(PanelMainColor), 4, 4, MainPanel.Width - 9, MainPanel.Height - 9, 9);
 		}
 		private void PanelCancel_Paint(object sender, PaintEventArgs e)
