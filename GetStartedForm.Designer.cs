@@ -35,7 +35,6 @@
             this.Panel_fake_rectangle = new System.Windows.Forms.Panel();
             this.ScanPCLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.CloseImage)).BeginInit();
-            this.Panel_fake_rectangle.SuspendLayout();
             this.SuspendLayout();
             // 
             // CloseImage
@@ -84,7 +83,6 @@
             // Panel_fake_rectangle
             // 
             this.Panel_fake_rectangle.BackColor = System.Drawing.Color.Transparent;
-            this.Panel_fake_rectangle.Controls.Add(this.ScanPCLabel);
             this.Panel_fake_rectangle.Location = new System.Drawing.Point(479, 503);
             this.Panel_fake_rectangle.Name = "Panel_fake_rectangle";
             this.Panel_fake_rectangle.Size = new System.Drawing.Size(363, 139);
@@ -96,7 +94,7 @@
             this.ScanPCLabel.BackColor = System.Drawing.Color.Transparent;
             this.ScanPCLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ScanPCLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(173)))), ((int)(((byte)(117)))));
-            this.ScanPCLabel.Location = new System.Drawing.Point(0, -8);
+            this.ScanPCLabel.Location = new System.Drawing.Point(715, 309);
             this.ScanPCLabel.Margin = new System.Windows.Forms.Padding(0);
             this.ScanPCLabel.Name = "ScanPCLabel";
             this.ScanPCLabel.Size = new System.Drawing.Size(363, 147);
@@ -116,6 +114,7 @@
             this.BackgroundImage = global::PcGameChecker.Properties.Resources.appbackground1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1320, 730);
+            this.Controls.Add(this.ScanPCLabel);
             this.Controls.Add(this.CloseImage);
             this.Controls.Add(this.CopyrightLabel);
             this.Controls.Add(this.Panel_fake_rectangle);
@@ -132,7 +131,6 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GetStartedForm_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GetStartedForm_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.CloseImage)).EndInit();
-            this.Panel_fake_rectangle.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

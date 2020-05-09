@@ -86,14 +86,7 @@ namespace PcGameChecker
 		/// <param name="height">Height of the rectangle to draw.</param>
 		/// <param name="radius">The radius of the arc used for the rounded edges.</param>
 
-		public static void DrawRoundedRectangle(
-			this Graphics graphics,
-			Pen pen,
-			float x,
-			float y,
-			float width,
-			float height,
-			float radius)
+		public static void DrawRoundedRectangle(this Graphics graphics, Pen pen, float x, float y, float width, float height, float radius)
 		{
 			RectangleF rectangle = new RectangleF(x, y, width, height);
 			GraphicsPath path = graphics.GenerateRoundedRectangle(rectangle, radius);

@@ -24,12 +24,14 @@ namespace PcGameChecker
         public uint metacritic;
         public double user_score;
 
+        public uint Min_RAM; // MB
         public uint Min_Processor_Cores;
         public uint Min_Processor_Threads;
         public uint Min_Processor_Clock; // Mhz
         public uint Min_Graphics_VRAM; // MB
         public uint Min_Graphics_Gpu_Clock;
 
+        public uint Rec_RAM; // MB
         public uint Rec_Processor_Cores;
         public uint Rec_Processor_Threads;
         public uint Rec_Processor_Clock; // Mhz

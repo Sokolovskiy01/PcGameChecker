@@ -51,7 +51,7 @@ namespace PcGameChecker
 		private void Panel_fake_rectangle_Paint(object sender, PaintEventArgs e)
 		{
 			Graphics g = e.Graphics;
-			g.SmoothingMode = SmoothingMode.AntiAlias;
+			g.SmoothingMode = SmoothingMode.HighQuality;
 			g.FillRoundedRectangle(new SolidBrush(bordercolor), 0, 0, Panel_fake_rectangle.Width - 1, Panel_fake_rectangle.Height - 1, 12);
 			g.FillRoundedRectangle(new SolidBrush(buttoncolor), 5, 5, Panel_fake_rectangle.Width - 11, Panel_fake_rectangle.Height - 11, 8);
 		}

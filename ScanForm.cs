@@ -38,14 +38,16 @@ namespace PcGameChecker
 		private uint TotalRam()
 		{
 			ScanTextLabel.Text = "Scanning RAM...";
-			ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT MaxCapacity FROM Win32_PhysicalMemoryArray");
-			uint Ramsize = 0;
-			foreach (ManagementObject WniPART in searcher.Get())
+			ObjectQuery wql = new ObjectQuery("SELECT TotalVisibleMemorySize FROM Win32_OperatingSystem");
+			ManagementObjectSearcher searcher = new ManagementObjectSearcher(wql);
+			ManagementObjectCollection results = searcher.Get();
+			uint memorysize = 0;
+			foreach (ManagementObject result in results)
 			{
-				Ramsize = Convert.ToUInt32(WniPART.Properties["MaxCapacity"].Value) / 1024; //Display in MB
+				memorysize = Convert.ToUInt32(result["TotalVisibleMemorySize"]);
 			}
-			Progressbar.Value += 5;
-			return Ramsize / 4;
+			memorysize /= 1024;
+			return memorysize;
 		}
 		private void getcpu()
 		{

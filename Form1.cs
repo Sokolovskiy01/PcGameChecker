@@ -85,26 +85,34 @@ namespace PcGameChecker
 			richTextBox1.Text += "Vram : " + Program.CM.GraphicsCard.Vram.ToString() + "\n";
 			richTextBox1.Text += "Max clock frequency : " + Program.CM.GraphicsCard.MaxClockFrequency.ToString() + "\n";
 		}
-		public uint TotalRam()
-		{
-			ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT MaxCapacity FROM Win32_PhysicalMemoryArray");
-			uint Ramsize = 0;
-			foreach (ManagementObject WniPART in searcher.Get()) {
-				Ramsize = Convert.ToUInt32(WniPART.Properties["MaxCapacity"].Value) / 1024; //Display in MB
-			}
-			return Ramsize / 4;
-		}
-
 		private void Form1_Load(object sender, EventArgs e)
 		{
-			getCM();
-			Sys_total_ram.Text = "Total RAM : " + TotalRam().ToString() + "MB";
+			ErrorCode error;
+			Platform[] platforms = Cl.GetPlatformIDs(out error);
+			List<Device> devicesList = new List<Device>();
+			foreach (Platform platform in platforms)
+			{
+				string platformName = Cl.GetPlatformInfo(platform, PlatformInfo.Name, out error).ToString();
+				Console.WriteLine("Platform: " + platformName);
+
+				foreach (Device device in Cl.GetDeviceIDs(platform, DeviceType.Gpu, out error))
+				{
+					devicesList.Add(device);
+				}
+			}
+
+			foreach (var vdev in devicesList)
+			{
+				richTextBox1.Text += Cl.GetDeviceInfo(vdev, DeviceInfo.MaxClockFrequency, out error).CastTo<uint>() + '\n';
+			}
+			//getCM();
+			Sys_total_ram.Text = "Total RAM : " + Program.CM.RamCapacity.ToString() + "MB";
 			BringToFront();
 			SendToBack();
 			CpuBar.Minimum = 0;
 			CpuBar.Maximum = 100;
 			RamBar.Minimum = 0;
-			RamBar.Maximum = Convert.ToInt32(TotalRam());
+			RamBar.Maximum = Convert.ToInt32(Program.CM.RamCapacity);
 			Comp_name.Font = new Font(Program.Comfortaa.Families[0], Comp_name.Font.Size);
 
 			//ram_usage.Text = pccc.NextValue().ToString();
@@ -163,7 +171,7 @@ namespace PcGameChecker
 
 		private void timer1_Tick(object sender, EventArgs e)
 		{
-			uint ram_total = TotalRam();
+			uint ram_total = Program.CM.RamCapacity;
 			int cpu_usage_val = Convert.ToInt32(CPU_perf.NextValue());
 			int ram_usage_val = Convert.ToInt32(ram_total - RAM_perf.NextValue());
 			cpu_usage.Text = "CPU Usage : " + cpu_usage_val.ToString() + "%";

@@ -21,6 +21,7 @@ namespace PcGameChecker
 		[STAThread]
 		static void Main()
 		{
+			if (Environment.OSVersion.Version.Major >= 6) SetProcessDPIAware();
 			mode = 1;
 			Comfortaa.AddFontFile("Resources\\Comfortaa-VariableFont_wght.ttf");
 			Application.EnableVisualStyles();
@@ -40,5 +41,7 @@ namespace PcGameChecker
 			//Application.Run(new GetStartedForm());
 			//Application.Run(new Main_Form());
 		}
+		[System.Runtime.InteropServices.DllImport("user32.dll")]
+		private static extern bool SetProcessDPIAware();
 	}
 }
