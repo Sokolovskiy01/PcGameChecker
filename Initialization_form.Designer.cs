@@ -33,11 +33,11 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.gradientPanel1 = new PcGameChecker.GradientPanel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.Initializing = new System.Windows.Forms.Label();
             this.Progressbar = new System.Windows.Forms.ProgressBar();
             this.Program_title = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +65,26 @@
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(650, 320);
             this.gradientPanel1.TabIndex = 1;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(440, 227);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(161, 57);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Run app";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(50, 227);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(161, 57);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Add Game";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Initializing
             // 
@@ -100,30 +120,9 @@
             this.Program_title.Text = "PC Game Cheker";
             this.Program_title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(50, 227);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 57);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Add Game";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(440, 227);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(161, 57);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Run app";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // Initialization_form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(650, 320);
             this.Controls.Add(this.gradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

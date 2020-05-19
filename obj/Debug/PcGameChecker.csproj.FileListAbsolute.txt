@@ -1,44 +1,14 @@
-C:\Users\magic\Desktop\PcGameChecker\bin\Debug\PcGameChecker.exe.config
-C:\Users\magic\Desktop\PcGameChecker\bin\Debug\PcGameChecker.exe
-C:\Users\magic\Desktop\PcGameChecker\bin\Debug\PcGameChecker.pdb
-C:\Users\magic\Desktop\PcGameChecker\obj\Debug\PcGameChecker.csprojAssemblyReference.cache
-C:\Users\magic\Desktop\PcGameChecker\obj\Debug\PcGameChecker.Properties.Resources.resources
-C:\Users\magic\Desktop\PcGameChecker\obj\Debug\PcGameChecker.csproj.GenerateResource.cache
-C:\Users\magic\Desktop\PcGameChecker\obj\Debug\PcGameChecker.exe
-C:\Users\magic\Desktop\PcGameChecker\obj\Debug\PcGameChecker.pdb
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\PcGameChecker.exe.config
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\PcGameChecker.exe
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\PcGameChecker.pdb
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.Properties.Resources.resources
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.csproj.GenerateResource.cache
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.exe
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.pdb
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\CircularProgressBar.dll
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\WinFormAnimation.dll
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.csproj.CopyComplete
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\EntityFramework.dll
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\EntityFramework.xml
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\Topshelf.dll
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\Topshelf.xml
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\XamlC.stamp
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.Main_Form.resources
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\OpenCL.Net.dll
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.csproj.CoreCompileInputs.cache
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\NvAPIWrapper.dll
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\NvAPIWrapper.xml
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.Initialization_form.resources
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.GetStartedForm.resources
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\Xamarin.Forms.Core.dll
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\Xamarin.Forms.Platform.dll
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\Xamarin.Forms.Xaml.dll
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\Xamarin.Forms.Core.pdb
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\Xamarin.Forms.Core.xml
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\Xamarin.Forms.Xaml.pdb
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\bin\Debug\Xamarin.Forms.Xaml.xml
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.AgreementForm.resources
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.csprojAssemblyReference.cache
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.GameADD.resources
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.ScanForm.resources
-C:\Users\Sokol\Desktop\Github Repos\PcGameChecker\obj\Debug\PcGameChecker.MainForm.resources
+C:\Users\Sokol\Desktop\PcGameChecker\bin\Debug\PcGameChecker.exe.config
+C:\Users\Sokol\Desktop\PcGameChecker\bin\Debug\PcGameChecker.exe
+C:\Users\Sokol\Desktop\PcGameChecker\bin\Debug\PcGameChecker.pdb
+C:\Users\Sokol\Desktop\PcGameChecker\obj\Debug\PcGameChecker.FormMain.resources
+C:\Users\Sokol\Desktop\PcGameChecker\obj\Debug\PcGameChecker.Properties.Resources.resources
+C:\Users\Sokol\Desktop\PcGameChecker\obj\Debug\PcGameChecker.csproj.GenerateResource.cache
+C:\Users\Sokol\Desktop\PcGameChecker\obj\Debug\PcGameChecker.csproj.CoreCompileInputs.cache
+C:\Users\Sokol\Desktop\PcGameChecker\obj\Debug\PcGameChecker.exe
+C:\Users\Sokol\Desktop\PcGameChecker\obj\Debug\PcGameChecker.pdb
+C:\Users\Sokol\Desktop\PcGameChecker\bin\Debug\XanderUI.dll
+C:\Users\Sokol\Desktop\PcGameChecker\obj\Debug\PcGameChecker.InitForm.resources
+C:\Users\Sokol\Desktop\PcGameChecker\obj\Debug\PcGameChecker.csproj.CopyComplete
+C:\Users\Sokol\Desktop\PcGameChecker\obj\Debug\PcGameChecker.GetStartedForm.resources
+C:\Users\Sokol\Desktop\PcGameChecker\obj\Debug\PcGameChecker.csprojAssemblyReference.cache

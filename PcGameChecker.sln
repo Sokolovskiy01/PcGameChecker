@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29806.167
+VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcGameChecker", "PcGameChecker.csproj", "{9D848FA5-0B0C-41F5-81C1-6CB8B4150A61}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcGameChecker", "PcGameChecker.csproj", "{11E35CE4-CB61-46BD-A11D-C6A829A07263}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9D848FA5-0B0C-41F5-81C1-6CB8B4150A61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9D848FA5-0B0C-41F5-81C1-6CB8B4150A61}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9D848FA5-0B0C-41F5-81C1-6CB8B4150A61}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9D848FA5-0B0C-41F5-81C1-6CB8B4150A61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11E35CE4-CB61-46BD-A11D-C6A829A07263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11E35CE4-CB61-46BD-A11D-C6A829A07263}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11E35CE4-CB61-46BD-A11D-C6A829A07263}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11E35CE4-CB61-46BD-A11D-C6A829A07263}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {0A6C81DF-E4C9-4BB2-BF75-178904DCAD3A}
+		SolutionGuid = {F4EDC9FD-7543-4CEF-B2FC-D7A544BFD27D}
 	EndGlobalSection
 EndGlobal

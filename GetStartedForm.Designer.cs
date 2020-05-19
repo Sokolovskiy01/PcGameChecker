@@ -28,119 +28,110 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GetStartedForm));
-            this.CloseImage = new System.Windows.Forms.PictureBox();
             this.GetStartedLabel = new System.Windows.Forms.Label();
             this.CopyrightLabel = new System.Windows.Forms.Label();
-            this.Panel_fake_rectangle = new System.Windows.Forms.Panel();
-            this.ScanPCLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.CloseImage)).BeginInit();
+            this.minimizeButton1 = new PcGameChecker.MinimizeButton();
+            this.closeButton1 = new PcGameChecker.CloseButton();
+            this.ScanButton = new PcGameChecker.RoundedButton();
             this.SuspendLayout();
-            // 
-            // CloseImage
-            // 
-            this.CloseImage.BackColor = System.Drawing.Color.Transparent;
-            this.CloseImage.BackgroundImage = global::PcGameChecker.Properties.Resources.closeg;
-            this.CloseImage.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.CloseImage.InitialImage = null;
-            this.CloseImage.Location = new System.Drawing.Point(1283, 12);
-            this.CloseImage.Name = "CloseImage";
-            this.CloseImage.Size = new System.Drawing.Size(25, 25);
-            this.CloseImage.TabIndex = 0;
-            this.CloseImage.TabStop = false;
-            this.CloseImage.WaitOnLoad = true;
-            this.CloseImage.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.CloseImage.MouseLeave += new System.EventHandler(this.CloseImage_MouseLeave);
-            this.CloseImage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CloseImage_MouseMove);
             // 
             // GetStartedLabel
             // 
             this.GetStartedLabel.BackColor = System.Drawing.Color.Transparent;
             this.GetStartedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 66F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.GetStartedLabel.Location = new System.Drawing.Point(12, 40);
+            this.GetStartedLabel.Location = new System.Drawing.Point(0, 40);
+            this.GetStartedLabel.Margin = new System.Windows.Forms.Padding(0);
             this.GetStartedLabel.Name = "GetStartedLabel";
-            this.GetStartedLabel.Size = new System.Drawing.Size(1296, 151);
+            this.GetStartedLabel.Size = new System.Drawing.Size(1320, 148);
             this.GetStartedLabel.TabIndex = 1;
             this.GetStartedLabel.Text = "Get Started";
             this.GetStartedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.GetStartedLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GetStartedForm_MouseDown);
-            this.GetStartedLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GetStartedForm_MouseMove);
             // 
             // CopyrightLabel
             // 
             this.CopyrightLabel.BackColor = System.Drawing.Color.Transparent;
-            this.CopyrightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.CopyrightLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.CopyrightLabel.Location = new System.Drawing.Point(262, 669);
+            this.CopyrightLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.CopyrightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.CopyrightLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.CopyrightLabel.Location = new System.Drawing.Point(0, 685);
             this.CopyrightLabel.Name = "CopyrightLabel";
-            this.CopyrightLabel.Size = new System.Drawing.Size(805, 52);
+            this.CopyrightLabel.Size = new System.Drawing.Size(1320, 45);
             this.CopyrightLabel.TabIndex = 2;
-            this.CopyrightLabel.Text = "© CoreX 2020. No rights reserved.";
+            this.CopyrightLabel.Text = "Copyright © CoreX 2020. No rights Reserved";
             this.CopyrightLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.CopyrightLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GetStartedForm_MouseDown);
-            this.CopyrightLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GetStartedForm_MouseMove);
             // 
-            // Panel_fake_rectangle
+            // minimizeButton1
             // 
-            this.Panel_fake_rectangle.BackColor = System.Drawing.Color.Transparent;
-            this.Panel_fake_rectangle.Location = new System.Drawing.Point(479, 503);
-            this.Panel_fake_rectangle.Name = "Panel_fake_rectangle";
-            this.Panel_fake_rectangle.Size = new System.Drawing.Size(363, 139);
-            this.Panel_fake_rectangle.TabIndex = 3;
-            this.Panel_fake_rectangle.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_fake_rectangle_Paint);
+            this.minimizeButton1.Buttoncolor = System.Drawing.Color.Transparent;
+            this.minimizeButton1.ButtonHoverColor = System.Drawing.Color.Silver;
+            this.minimizeButton1.icon = global::PcGameChecker.Properties.Resources.minimize;
+            this.minimizeButton1.Location = new System.Drawing.Point(1240, 0);
+            this.minimizeButton1.Margin = new System.Windows.Forms.Padding(0);
+            this.minimizeButton1.Name = "minimizeButton1";
+            this.minimizeButton1.Size = new System.Drawing.Size(40, 30);
+            this.minimizeButton1.TabIndex = 4;
+            this.minimizeButton1.Text = "minimizeButton1";
+            this.minimizeButton1.Click += new System.EventHandler(this.minimizeButton1_Click);
             // 
-            // ScanPCLabel
+            // closeButton1
             // 
-            this.ScanPCLabel.BackColor = System.Drawing.Color.Transparent;
-            this.ScanPCLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ScanPCLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(173)))), ((int)(((byte)(117)))));
-            this.ScanPCLabel.Location = new System.Drawing.Point(715, 309);
-            this.ScanPCLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.ScanPCLabel.Name = "ScanPCLabel";
-            this.ScanPCLabel.Size = new System.Drawing.Size(363, 147);
-            this.ScanPCLabel.TabIndex = 4;
-            this.ScanPCLabel.Text = " Scan my PC ";
-            this.ScanPCLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ScanPCLabel.Click += new System.EventHandler(this.ScanPCLabel_Click);
-            this.ScanPCLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ScanPCLabel_MouseDown);
-            this.ScanPCLabel.MouseLeave += new System.EventHandler(this.ScanPCLabel_MouseLeave);
-            this.ScanPCLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ScanPCLabel_MouseMove);
+            this.closeButton1.Buttoncolor = System.Drawing.Color.Transparent;
+            this.closeButton1.ButtonHoverColor = System.Drawing.Color.Red;
+            this.closeButton1.icon = global::PcGameChecker.Properties.Resources.close;
+            this.closeButton1.icon2 = global::PcGameChecker.Properties.Resources.close2;
+            this.closeButton1.Location = new System.Drawing.Point(1280, 0);
+            this.closeButton1.Margin = new System.Windows.Forms.Padding(0);
+            this.closeButton1.Name = "closeButton1";
+            this.closeButton1.Size = new System.Drawing.Size(40, 30);
+            this.closeButton1.TabIndex = 3;
+            this.closeButton1.Text = "closeButton1";
+            this.closeButton1.Click += new System.EventHandler(this.closeButton1_Click);
+            // 
+            // ScanButton
+            // 
+            this.ScanButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(173)))), ((int)(((byte)(117)))));
+            this.ScanButton.BorderWidth = 5;
+            this.ScanButton.ButtonColor = System.Drawing.Color.White;
+            this.ScanButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ScanButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ScanButton.FontColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(173)))), ((int)(((byte)(117)))));
+            this.ScanButton.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(111)))), ((int)(((byte)(180)))));
+            this.ScanButton.HoverButtonColor = System.Drawing.SystemColors.Control;
+            this.ScanButton.HoverFontColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(111)))), ((int)(((byte)(180)))));
+            this.ScanButton.Location = new System.Drawing.Point(480, 497);
+            this.ScanButton.Name = "ScanButton";
+            this.ScanButton.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.ScanButton.Rounding = 35F;
+            this.ScanButton.Size = new System.Drawing.Size(360, 145);
+            this.ScanButton.TabIndex = 0;
+            this.ScanButton.Text = "Scan my PC";
             // 
             // GetStartedForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::PcGameChecker.Properties.Resources.appbackground1;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BackgroundImage = global::PcGameChecker.Properties.Resources.GetStartedBackground;
             this.ClientSize = new System.Drawing.Size(1320, 730);
-            this.Controls.Add(this.ScanPCLabel);
-            this.Controls.Add(this.CloseImage);
+            this.Controls.Add(this.minimizeButton1);
+            this.Controls.Add(this.closeButton1);
             this.Controls.Add(this.CopyrightLabel);
-            this.Controls.Add(this.Panel_fake_rectangle);
             this.Controls.Add(this.GetStartedLabel);
+            this.Controls.Add(this.ScanButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "GetStartedForm";
-            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GetStartedForm";
             this.Load += new System.EventHandler(this.GetStartedForm_Load);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GetStartedForm_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GetStartedForm_MouseMove);
-            ((System.ComponentModel.ISupportInitialize)(this.CloseImage)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox CloseImage;
+        private RoundedButton ScanButton;
         private System.Windows.Forms.Label GetStartedLabel;
         private System.Windows.Forms.Label CopyrightLabel;
-        private System.Windows.Forms.Panel Panel_fake_rectangle;
-        private System.Windows.Forms.Label ScanPCLabel;
+        private CloseButton closeButton1;
+        private MinimizeButton minimizeButton1;
     }
 }
