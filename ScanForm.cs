@@ -49,7 +49,7 @@ namespace PcGameChecker
 							if (i == 9) MessageBox.Show("No OS detected");
 						}
 					}
-					if (myProperty.Name == "Description") Program.ThisPC.SystemName = obj.Properties[myProperty.Name].Value.ToString();
+					if (myProperty.Name == "CSName") Program.ThisPC.SystemName = obj.Properties[myProperty.Name].Value.ToString();
 					if (myProperty.Name == "OSArchitecture")
 					{
 						if (obj.Properties[myProperty.Name].Value.ToString().Contains("64")) Program.ThisPC.SystemArchitecture = 64;
