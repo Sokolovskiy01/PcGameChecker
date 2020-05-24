@@ -1,0 +1,7 @@
+#24ad75 FromArgb(36, 173, 117) Lime Green
+#256fb4 FromArgb(37, 111, 180) Blue
+#ffffff White
+#999999 FromArgb(153, 153, 153) Grey
+#282828 FromArgb(40, 40, 40) Dark mode
+#cc3333 FromArgb(203, 51, 51) Red Category
+#e7b234 FromArgb(231, 178, 52) Orange Category
