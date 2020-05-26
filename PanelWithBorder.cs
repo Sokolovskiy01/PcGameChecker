@@ -30,8 +30,13 @@ namespace PcGameChecker
 				}
 			}
 		}
-
-		protected override void OnPaint(PaintEventArgs e)
+        protected override void OnLayout(LayoutEventArgs levent)
+        {
+            base.OnLayout(levent);
+			SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.SupportsTransparentBackColor | ControlStyles.UserPaint, true);
+			DoubleBuffered = true;
+		}
+        protected override void OnPaint(PaintEventArgs e)
 		{
 			base.OnPaint(e);
 			Graphics graph = e.Graphics;

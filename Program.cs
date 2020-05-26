@@ -12,10 +12,8 @@ namespace PcGameChecker
         public static PrivateFontCollection Comfortaa = new PrivateFontCollection();
         public static CurrentMachine ThisPC = new CurrentMachine();
         public static List<Game> GamesList;
+        public static bool cpuPerf = true;
         public static bool IsFirstRun = true;
-        /// <summary>
-        /// Główny punkt wejścia dla aplikacji.
-        /// </summary>
         [STAThread]
         static void Main()
         {
@@ -23,13 +21,11 @@ namespace PcGameChecker
             Comfortaa.AddFontFile("Resources\\Comfortaa-VariableFont_wght.ttf");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
             Application.Run(new InitForm());
             if (IsFirstRun) {
                 Application.Run(new GetStartedForm());
                 Application.Run(new ScanForm());
             }
-            //Application.Run(new ScanForm());
             Application.Run(new FormMain());
         }
         [System.Runtime.InteropServices.DllImport("user32.dll")]

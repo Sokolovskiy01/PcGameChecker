@@ -53,6 +53,8 @@ namespace PcGameChecker
 			DoubleBuffered = true;
 			Size = new Size(120, 30);
 
+			Cursor = Cursors.Hand;
+
 			BorderColor = Color.Empty;
 			ButtonColor = Color.Green;
 			FontColor = Color.Empty;
@@ -122,7 +124,7 @@ namespace PcGameChecker
 				graph.FillPath(new SolidBrush(ButtonColor), rectPath);
 				graph.DrawString(Text, Font, new SolidBrush(FontColor), textrect, SF);
 			}
-			graph.SetClip(rectPath);
+			graph.SetClip(RoundedRectangle(new Rectangle(0, 0, Width, Height), rounding));
 			if (MousePressed)
 			{
 				graph.DrawRectangle(new Pen(Color.FromArgb(70, Color.Black)), rect);

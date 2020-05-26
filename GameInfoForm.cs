@@ -84,7 +84,7 @@ namespace PcGameChecker
 
 				GameRecProcessorCoresLabel.Text = game.Rec_Processor_Cores.ToString();
 				GameRecProcessorThreadsCount.Text = game.Rec_Processor_Threads.ToString();
-				GameRecGPUCLock.Text = game.Rec_Processor_Clock.ToString() + " MHz";
+				GamesRecProcessorClock.Text = game.Rec_Processor_Clock.ToString() + " MHz";
 				GameRecRAM.Text = game.Rec_RAM.ToString() + " MB";
 				GameRecGPUVRAM.Text = game.Rec_Graphics_VRAM.ToString() + " MB";
 				GameRecGPUCLock.Text = game.Rec_Graphics_Gpu_Clock.ToString() + " MHz";

@@ -14,6 +14,11 @@ namespace PcGameChecker
 {
     public partial class AgreementForm : Form
     {
+		public AgreementForm(string text)
+        {
+			InitializeComponent();
+			AgeementLabel.Text = text;
+		}
         public AgreementForm()
         {
             InitializeComponent();

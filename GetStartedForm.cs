@@ -23,6 +23,9 @@ namespace PcGameChecker
 			GetStartedLabel.Font = new Font(Program.Comfortaa.Families[0], GetStartedLabel.Font.Size);
 			ScanButton.Font = new Font(Program.Comfortaa.Families[0], ScanButton.Font.Size);
 			CopyrightLabel.Font = new Font(Program.Comfortaa.Families[0], CopyrightLabel.Font.Size);
+			minimizeButton1.BringToFront();
+			closeButton1.BringToFront();
+			AuthorsLabel.Font = new Font(Program.Comfortaa.Families[0], 13.0F);
 		}
 
 		private void minimizeButton1_Click(object sender, EventArgs e)

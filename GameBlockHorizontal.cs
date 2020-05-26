@@ -34,7 +34,6 @@ namespace TPcGameChecker
 		public string gamec = "null";
 
 		private bool MouseEntered = false;
-		private bool MousePressed = false;
 
 		private float rounding = 20;
 		public float Rounding

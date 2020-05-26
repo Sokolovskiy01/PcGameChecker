@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Management;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace PcGameChecker
 {
 	public partial class FormMain : Form
 	{
-		List<Game> GameList = new List<Game>();
+		private System.Diagnostics.PerformanceCounter CPU_perf = new PerformanceCounter();
 		private int driveleftmargin = 230;
 		private int gametopmargin = 92;
 		int gamescount = 0;
@@ -25,6 +26,17 @@ namespace PcGameChecker
 		public FormMain()
 		{
 			InitializeComponent();
+			CPU_perf.CategoryName = "Processor";
+			CPU_perf.CounterName = "% Processor time";
+			CPU_perf.InstanceName = "_Total";
+			try	{
+				((System.ComponentModel.ISupportInitialize)(this.CPU_perf)).BeginInit();
+				((System.ComponentModel.ISupportInitialize)(CPU_perf)).EndInit();
+			}
+			catch {
+				HomeInfoProcessorCounterLabel.Text = "error";
+				Program.cpuPerf = false;
+			}
 		}
 		private void GetDiskspaces()
 		{
@@ -36,7 +48,7 @@ namespace PcGameChecker
 			fds.Location = new Point(0, 0);
 			fds.Font = new Font(Program.Comfortaa.Families[0], 13.8F);
 			HomeGamesPanel.Controls.Add(fds);
-			double a = 0;
+			double a;
 			DriveInfo[] allDrives = DriveInfo.GetDrives();
 			foreach (DriveInfo MyDriveInfo in allDrives)
 			{
@@ -52,21 +64,99 @@ namespace PcGameChecker
 				}
 			}
 		}
-		private void DeserializeGames(/*Panel parent*/)
+		private void SortBySelectedMethod()
 		{
-			Color c;
-			gamescount = 0;
-			foreach (Game game in Program.GamesList)
+			if (SettingsComboBoxSort.SelectedIndex == 0) // sort by indexes
 			{
-				c = SetCYRIColor(game);
-				GameBlockHorizontal gbh = new GameBlockHorizontal(game, c, gamescount);
-				gbh.Location = new Point(57, gametopmargin);
-				HomeGamesPanel.Controls.Add(gbh);
-				//ExistingGamesRichTextBox.Text += count.ToString() + ") " + game.Name + "\n";
-				gametopmargin += 85;
-				gamescount++;
+				DeserializeGames(Program.GamesList);
 			}
-			//GameList.Clear();
+			else if (SettingsComboBoxSort.SelectedIndex == 1) // sort a-z
+			{
+				List<Game> Sorted = Program.GamesList.OrderBy(o => o.Name).ToList();
+				DeserializeGames(Sorted);
+				Sorted.Clear();
+			}
+			else if (SettingsComboBoxSort.SelectedIndex == 2) //sort z-a
+			{
+				List<Game> Sorted = Program.GamesList.OrderBy(o => o.Name).ToList();
+				Sorted.Reverse();
+				DeserializeGames(Sorted);
+				Sorted.Clear();
+			}
+			else if (SettingsComboBoxSort.SelectedIndex == 3) // sort yes-no
+			{
+				List<Game> Sorted = Program.GamesList.OrderBy(o => o.Name).ToList();
+				List<Game> Sorted2 = new List<Game>();
+				foreach (Game g in Sorted) { // add every Yes
+					if (g.CanYouRunItColor == Color.FromArgb(36, 173, 117))	{
+						Sorted2.Add(g);
+					}
+				}
+				foreach (Game g in Sorted) { // add every maybe
+					if (g.CanYouRunItColor == Color.FromArgb(231, 178, 52))	{
+						Sorted2.Add(g);
+					}
+				}
+				foreach (Game g in Sorted) { // add every no
+					if (g.CanYouRunItColor == Color.FromArgb(203, 51, 51)) {
+						Sorted2.Add(g);
+					}
+				}
+				DeserializeGames(Sorted2);
+				Sorted.Clear();
+				Sorted2.Clear();
+			}
+			else if (SettingsComboBoxSort.SelectedIndex == 4) // sort no-yes
+			{
+				List<Game> Sorted = Program.GamesList.OrderBy(o => o.Name).ToList();
+				Sorted.Reverse();
+				List<Game> Sorted2 = new List<Game>();
+				foreach (Game g in Sorted) { // add every no
+					if (g.CanYouRunItColor == Color.FromArgb(203, 51, 51)) {
+						Sorted2.Add(g);
+					}
+				}
+				foreach (Game g in Sorted) { // add every maybe
+					if (g.CanYouRunItColor == Color.FromArgb(231, 178, 52))	{
+						Sorted2.Add(g);
+					}
+				}
+				foreach (Game g in Sorted) { // add every Yes
+					if (g.CanYouRunItColor == Color.FromArgb(36, 173, 117))	{
+						Sorted2.Add(g);
+					}
+				}
+				DeserializeGames(Sorted2);
+				Sorted.Clear();
+				Sorted2.Clear();
+			}
+		}
+		private void DeserializeGames(List<Game> SelectedList)
+		{
+			foreach (Game game in SelectedList)
+			{
+				if (game.CanYouRunItColor == Color.FromArgb(36, 173, 117) && SettingsGamesYesSwitch.SwitchState == XanderUI.XUISwitch.State.On)
+				{
+					GameBlockHorizontal gbh = new GameBlockHorizontal(game, game.CanYouRunItColor, Program.GamesList.IndexOf(game));
+					gbh.Location = new Point(57, gametopmargin);
+					HomeGamesPanel.Controls.Add(gbh);
+					gametopmargin += 85;
+				}
+				if (game.CanYouRunItColor == Color.FromArgb(231, 178, 52) && SettingsGamesMaybeSwitch.SwitchState == XanderUI.XUISwitch.State.On)
+				{
+					GameBlockHorizontal gbh = new GameBlockHorizontal(game, game.CanYouRunItColor, Program.GamesList.IndexOf(game));
+					gbh.Location = new Point(57, gametopmargin);
+					HomeGamesPanel.Controls.Add(gbh);
+					gametopmargin += 85;
+				}
+				if (game.CanYouRunItColor == Color.FromArgb(203, 51, 51) && SettingsGamesNoSwitch.SwitchState == XanderUI.XUISwitch.State.On)
+				{
+					GameBlockHorizontal gbh = new GameBlockHorizontal(game, game.CanYouRunItColor, Program.GamesList.IndexOf(game));
+					gbh.Location = new Point(57, gametopmargin);
+					HomeGamesPanel.Controls.Add(gbh);
+					gametopmargin += 85;
+				}
+			}
 		}
 		private void CreateGamesList()
 		{
@@ -125,6 +215,9 @@ namespace PcGameChecker
 
 			GamesLabelCount.Font = new Font(Program.Comfortaa.Families[0], GamesLabelCount.Font.Size);
 			GamesGamesList.Font = new Font(Program.Comfortaa.Families[0], GamesGamesList.Font.Size);
+			SettingsComboBoxSort.Font = new Font(Program.Comfortaa.Families[0], SettingsComboBoxSort.Font.Size);
+			SettingsScanComputerAgainButton.Font = new Font(Program.Comfortaa.Families[0], SettingsScanComputerAgainButton.Font.Size);
+			SettingsComboBoxSort.SelectedIndex = 0;
 
 			SettingsLabel.Font = new Font(Program.Comfortaa.Families[0], SettingsLabel.Font.Size);
 			SettingsDarkModeLabel.Font = new Font(Program.Comfortaa.Families[0], SettingsDarkModeLabel.Font.Size);
@@ -140,6 +233,10 @@ namespace PcGameChecker
 		}
 		private void FormMain_Shown(object sender, EventArgs e)
 		{
+			foreach (Game game in Program.GamesList)
+			{
+				game.CanYouRunItColor = SetCYRIColor(game);
+			}
 			HomeButton_Click(sender, e);
 		}
 
@@ -173,7 +270,7 @@ namespace PcGameChecker
 				HomeButton.IsActive = true;
 				driveleftmargin = 230;
 				gametopmargin = 92;
-				DeserializeGames();
+				SortBySelectedMethod();
 				GetDiskspaces();
 				Invalidate();
 			}
@@ -193,8 +290,13 @@ namespace PcGameChecker
 
 		private void timer1_Tick(object sender, EventArgs e)
 		{
-			float pcpu = CPU_perf.NextValue();
-			HomeInfoProcessorCounterLabel.Text = string.Format("{0:0.0}%", pcpu);
+			if (Program.cpuPerf) {
+				float pcpu = CPU_perf.NextValue();
+				HomeInfoProcessorCounterLabel.Text = string.Format("{0:0.0}%", pcpu);
+			}
+			else {
+				timer1.Enabled = false;
+			}
 		}
 
 		private void SettingsDarkModeSwitch_SwitchStateChanged(object sender, EventArgs e)
@@ -209,6 +311,7 @@ namespace PcGameChecker
 				SettingsFontColorPicker.BackColor = Color.FromArgb(40, 40, 40);
 				SettingsApplyButton.BackColor = Color.FromArgb(40, 40, 40);
 				SettingsResetButton.BackColor = Color.FromArgb(40, 40, 40);
+				SettingsScanComputerAgainButton.BackColor = Color.FromArgb(40, 40, 40);
 				GamesPanelGamesCount.BackgroundColor = Color.FromArgb(40, 40, 40);
 				BackColor = Color.FromArgb(40, 40, 40);
 				ForeColor = Color.FromArgb(225, 225, 225);
@@ -223,6 +326,7 @@ namespace PcGameChecker
 				SettingsFontColorPicker.BackColor = Color.White;
 				SettingsApplyButton.BackColor = Color.White;
 				SettingsResetButton.BackColor = Color.White;
+				SettingsScanComputerAgainButton.BackColor = Color.White;
 				GamesPanelGamesCount.BackgroundColor = Color.White;
 				BackColor = Color.White;
 				ForeColor = Color.Black;
@@ -255,7 +359,24 @@ namespace PcGameChecker
 			}
 		}
 
-		private void HomePanelInfoCMName_MouseMove(object sender, MouseEventArgs e)
+		private void SettingsScanComputerAgainButton_Click(object sender, EventArgs e)
+		{
+			AgreementForm scanagain = new AgreementForm("Are you sure, that you want ro recsan your PC? In case of insuccess previous state could not be restored. If you want to backup your scan please, copy currentmachine.dat into another folder.");
+			if(scanagain.ShowDialog() == DialogResult.OK) {
+				ScanForm scan = new ScanForm();
+				scan.Show();
+				WindowState = FormWindowState.Minimized;
+                scan.FormClosed += Scan_FormClosed;
+			}
+		}
+
+        private void Scan_FormClosed(object sender, FormClosedEventArgs e)
+        {
+			WindowState = FormWindowState.Normal;
+			HomeButton_Click(sender, e);
+        }
+
+        private void HomePanelInfoCMName_MouseMove(object sender, MouseEventArgs e)
 		{
 			if (e.Button == MouseButtons.Left)
 			{
@@ -374,20 +495,13 @@ namespace PcGameChecker
 						IsGPUOkay = 1;
 					}
 					else {
+						//there should be a warnig about too high screen resolution
 						IsGPUOkay = 2;
 					}
 				}
 				else
 				{
-					uint MachineResolutionCoefficient = Program.ThisPC.GraphicsCard.CurrentHorizontalResolution * Program.ThisPC.GraphicsCard.CurrentVerticalResolution;
-					double coefficient = Convert.ToDouble(MachineResolutionCoefficient / MinimalResolutionСoefficient); // (1920 * 1080) / (1280 * 720) = 2.25
-					if (Program.ThisPC.GraphicsCard.Vram >= Convert.ToDouble(G.Min_Graphics_VRAM) * coefficient) {
-						//there should be an message that you can try to lauch on smaller resolution
-						IsGPUOkay = 2;
-					}
-					else {
-						IsGPUOkay = 3;
-					}
+					IsGPUOkay = 2;
 				}
 			}
 			else {

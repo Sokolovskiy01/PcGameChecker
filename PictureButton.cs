@@ -16,6 +16,8 @@ namespace PcGameChecker
 		public Image Picture2 { get; set; }
 		public PictureButton()
 		{
+			SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.SupportsTransparentBackColor | ControlStyles.UserPaint, true);
+			DoubleBuffered = true;
 			IsActive = false;
 			Size = new Size(100, 100);
 		}

@@ -41,10 +41,6 @@ namespace PcGameChecker
 		}
 
 		private bool MouseEntered = false;
-		private bool MousePressed = false;
-
-		private static Rectangle test;
-		private GraphicsPath testpath;
 
 		private Image GamePoster;
 		private string GameName;
@@ -52,6 +48,7 @@ namespace PcGameChecker
 		private int gameid;
 		public GameBlockVertical()
 		{
+			//for test purposes
 			Size = new Size(280, 436);
 			BorderColor = Color.Gray;
 			Bodycolor = Color.White;
@@ -61,8 +58,8 @@ namespace PcGameChecker
 		}
 		public GameBlockVertical(Game g, Color bordercolor, Color bodycolor,int id)
 		{
-			test = new Rectangle(0, 0, 0, 0);
-			testpath = RoundedRectangle(test, rounding);
+			SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.SupportsTransparentBackColor | ControlStyles.UserPaint, true);
+			DoubleBuffered = true;
 			Cursor = Cursors.Hand;
 			Size = new Size(280, 436);
 			BorderColor = bordercolor;
@@ -117,31 +114,32 @@ namespace PcGameChecker
 			if (ForeColor != Color.FromArgb(225, 225, 225))	graph.DrawString(GameName, Font, new SolidBrush(ForeColor), GameNamerect, SF);
 			else graph.DrawString(GameName, Font, new SolidBrush(Color.Black), GameNamerect, SF);
 
-			graph.SetClip(testpath);
-			graph.DrawRectangle(new Pen(Color.FromArgb(50, Color.Black)), test);
-			graph.FillRectangle(new SolidBrush(Color.FromArgb(50, Color.Black)), test);
-			graph.DrawString("Click here for more info", Font, new SolidBrush(Color.FromArgb(225,225,225)), test, SF);
+			Rectangle test = new Rectangle(0, 0, Width, Height);
+			if (MouseEntered)
+			{
+				GraphicsPath testpath = RoundedRectangle(test, rounding);
+				graph.SetClip(testpath);
+				graph.DrawRectangle(new Pen(Color.FromArgb(50, Color.Black)), test);
+				graph.FillRectangle(new SolidBrush(Color.FromArgb(50, Color.Black)), test);
+				graph.DrawString("Click here for more info", Font, new SolidBrush(Color.FromArgb(225, 225, 225)), test, SF);
+			}
 		}
 		protected override void OnMouseEnter(EventArgs e)
 		{
-			test = new Rectangle(0, 0, Width - 1, Height - 1);
-			testpath = RoundedRectangle(test, rounding);
 			base.OnMouseEnter(e);
 			MouseEntered = true;
-			//Invalidate();
+			Invalidate();
 		}
 		protected override void OnMouseLeave(EventArgs e)
 		{
-			test = new Rectangle(0, 0, 0, 0);
-			testpath = RoundedRectangle(test, rounding);
 			base.OnMouseLeave(e);
 			MouseEntered = false;
-			//Invalidate();
+			Invalidate();
 		}
 		protected override void OnMouseDown(MouseEventArgs e)
 		{
-			Location = new Point(Location.X + 1, Location.Y + 1);
 			base.OnMouseDown(e);
+			Location = new Point(Location.X + 1, Location.Y + 1);
 		}
 		protected override void OnMouseUp(MouseEventArgs e)
 		{

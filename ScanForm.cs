@@ -164,7 +164,9 @@ namespace PcGameChecker
 
 		private void ScanForm_Shown(object sender, EventArgs e)
 		{
-			if (File.Exists("currentmachine.dat")) MessageBox.Show("This computer was scanned");
+			if (File.Exists("currentmachine.dat"))	{
+				File.Delete("currentmachine.dat");
+			}
 			CurrentMachineDefaultSettings();
 			getOS(); // +10
 			getRam(); // +10

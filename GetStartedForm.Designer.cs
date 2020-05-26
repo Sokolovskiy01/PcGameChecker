@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GetStartedForm));
             this.GetStartedLabel = new System.Windows.Forms.Label();
             this.CopyrightLabel = new System.Windows.Forms.Label();
             this.minimizeButton1 = new PcGameChecker.MinimizeButton();
             this.closeButton1 = new PcGameChecker.CloseButton();
             this.ScanButton = new PcGameChecker.RoundedButton();
+            this.AuthorsLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // GetStartedLabel
@@ -57,7 +59,7 @@
             this.CopyrightLabel.Name = "CopyrightLabel";
             this.CopyrightLabel.Size = new System.Drawing.Size(1320, 45);
             this.CopyrightLabel.TabIndex = 2;
-            this.CopyrightLabel.Text = "Copyright © CoreX 2020. No rights Reserved";
+            this.CopyrightLabel.Text = "Copyright © VDV 2020. No rights Reserved";
             this.CopyrightLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // minimizeButton1
@@ -107,18 +109,33 @@
             this.ScanButton.Text = "Scan my PC";
             this.ScanButton.Click += new System.EventHandler(this.ScanButton_Click);
             // 
+            // AuthorsLabel
+            // 
+            this.AuthorsLabel.BackColor = System.Drawing.Color.Transparent;
+            this.AuthorsLabel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.AuthorsLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.AuthorsLabel.Location = new System.Drawing.Point(1029, 0);
+            this.AuthorsLabel.Name = "AuthorsLabel";
+            this.AuthorsLabel.Size = new System.Drawing.Size(291, 685);
+            this.AuthorsLabel.TabIndex = 5;
+            this.AuthorsLabel.Text = "Dmytro Sokolovskyi\r\nVladyslav Zagurskiy\r\nVladyslav Kvoka";
+            this.AuthorsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // GetStartedForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::PcGameChecker.Properties.Resources.GetStartedBackground;
             this.ClientSize = new System.Drawing.Size(1320, 730);
+            this.Controls.Add(this.AuthorsLabel);
             this.Controls.Add(this.minimizeButton1);
             this.Controls.Add(this.closeButton1);
             this.Controls.Add(this.CopyrightLabel);
             this.Controls.Add(this.GetStartedLabel);
             this.Controls.Add(this.ScanButton);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GetStartedForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GetStartedForm";
@@ -134,5 +151,6 @@
         private System.Windows.Forms.Label CopyrightLabel;
         private CloseButton closeButton1;
         private MinimizeButton minimizeButton1;
+        private System.Windows.Forms.Label AuthorsLabel;
     }
 }

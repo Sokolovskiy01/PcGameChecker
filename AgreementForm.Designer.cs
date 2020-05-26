@@ -35,27 +35,31 @@
             // 
             // AgeementLabel
             // 
+            this.AgeementLabel.BackColor = System.Drawing.Color.Transparent;
+            this.AgeementLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AgeementLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.AgeementLabel.Location = new System.Drawing.Point(93, 63);
+            this.AgeementLabel.Location = new System.Drawing.Point(0, 0);
             this.AgeementLabel.Name = "AgeementLabel";
-            this.AgeementLabel.Size = new System.Drawing.Size(521, 232);
+            this.AgeementLabel.Padding = new System.Windows.Forms.Padding(50, 60, 50, 0);
+            this.AgeementLabel.Size = new System.Drawing.Size(620, 390);
             this.AgeementLabel.TabIndex = 0;
             this.AgeementLabel.Text = "This program does NOT collects any of your private data and don\'t even establish " +
     "an internet connection. Whole games database is local and this program has it\'s " +
     "own perfomance computing algoritm.";
-            this.AgeementLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.AgeementLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // ProceedButton
             // 
             this.ProceedButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(173)))), ((int)(((byte)(117)))));
             this.ProceedButton.BorderWidth = 3;
             this.ProceedButton.ButtonColor = System.Drawing.Color.White;
+            this.ProceedButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ProceedButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ProceedButton.FontColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(173)))), ((int)(((byte)(117)))));
             this.ProceedButton.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(111)))), ((int)(((byte)(180)))));
             this.ProceedButton.HoverButtonColor = System.Drawing.Color.White;
             this.ProceedButton.HoverFontColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(111)))), ((int)(((byte)(180)))));
-            this.ProceedButton.Location = new System.Drawing.Point(428, 335);
+            this.ProceedButton.Location = new System.Drawing.Point(348, 272);
             this.ProceedButton.Name = "ProceedButton";
             this.ProceedButton.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.ProceedButton.Rounding = 20F;
@@ -69,12 +73,13 @@
             this.CancelButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(173)))), ((int)(((byte)(117)))));
             this.CancelButton.BorderWidth = 3;
             this.CancelButton.ButtonColor = System.Drawing.Color.White;
+            this.CancelButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.CancelButton.FontColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(173)))), ((int)(((byte)(117)))));
             this.CancelButton.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.CancelButton.HoverButtonColor = System.Drawing.Color.White;
             this.CancelButton.HoverFontColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.CancelButton.Location = new System.Drawing.Point(120, 335);
+            this.CancelButton.Location = new System.Drawing.Point(91, 272);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.CancelButton.Rounding = 20F;
@@ -88,7 +93,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(730, 480);
+            this.ClientSize = new System.Drawing.Size(620, 390);
             this.Controls.Add(this.ProceedButton);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.AgeementLabel);
