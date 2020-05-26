@@ -366,17 +366,17 @@ namespace PcGameChecker
 				ScanForm scan = new ScanForm();
 				scan.Show();
 				WindowState = FormWindowState.Minimized;
-                scan.FormClosed += Scan_FormClosed;
+				scan.FormClosed += Scan_FormClosed;
 			}
 		}
 
-        private void Scan_FormClosed(object sender, FormClosedEventArgs e)
-        {
+		private void Scan_FormClosed(object sender, FormClosedEventArgs e)
+		{
 			WindowState = FormWindowState.Normal;
 			HomeButton_Click(sender, e);
-        }
+		}
 
-        private void HomePanelInfoCMName_MouseMove(object sender, MouseEventArgs e)
+		private void HomePanelInfoCMName_MouseMove(object sender, MouseEventArgs e)
 		{
 			if (e.Button == MouseButtons.Left)
 			{
@@ -456,7 +456,10 @@ namespace PcGameChecker
 					}
 					else {
 						// bad, set to maybe because sometimes processor clock is badly detected
-						if (Math.Abs(Convert.ToInt32(Program.ThisPC.Processor.MaxClockSpeed) - Convert.ToInt32(G.Min_Processor_Clock)) <= 1000){
+						if (Program.ThisPC.Processor.NumberOfCores >= G.Min_Processor_Cores * 2 && Program.ThisPC.Processor.ThreadCount >= G.Min_Processor_Threads * 2) {
+							IsProcessorOkay = 1;
+						}
+						else if (Math.Abs(Convert.ToInt32(Program.ThisPC.Processor.MaxClockSpeed) - Convert.ToInt32(G.Min_Processor_Clock)) <= 800){
 							IsProcessorOkay = 1;
 						}
 						else IsProcessorOkay = 2;
@@ -515,7 +518,7 @@ namespace PcGameChecker
 					if (IsProcessorOkay == 1 && IsGPUOkay == 1)	{
 						return Color.FromArgb(36, 173, 117); // Yes
 					}
-					else if ((IsProcessorOkay == 2 || IsGPUOkay == 2) && (IsProcessorOkay != 3 || IsGPUOkay != 3)) {
+					else if ((IsProcessorOkay == 2 || IsGPUOkay == 2) && (IsProcessorOkay != 3 && IsGPUOkay != 3)) {
 						return Color.FromArgb(231, 178, 52); // Maybe
 					}
 					else if (IsProcessorOkay == 3 || IsGPUOkay == 3) {
@@ -531,7 +534,14 @@ namespace PcGameChecker
 			}
 			return Color.FromArgb(231, 178, 52); // Maybe
 		}
-
-
+		protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+		{
+			if (keyData == (Keys.Control | Keys.Shift | Keys.A))
+			{
+				MessageBox.Show("Аня, я тебя люблю!");
+				return true;
+			}
+			return base.ProcessCmdKey(ref msg, keyData);
+		}
 	}
 }

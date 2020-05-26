@@ -21,8 +21,10 @@ namespace PcGameChecker
             Comfortaa.AddFontFile("Resources\\Comfortaa-VariableFont_wght.ttf");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new GameADD());
             Application.Run(new InitForm());
-            if (IsFirstRun) {
+            if (IsFirstRun)
+            {
                 Application.Run(new GetStartedForm());
                 Application.Run(new ScanForm());
             }

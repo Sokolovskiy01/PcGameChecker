@@ -876,8 +876,8 @@
             // 
             this.TableLayaoutShortDesc.BackColor = System.Drawing.Color.Transparent;
             this.TableLayaoutShortDesc.ColumnCount = 2;
-            this.TableLayaoutShortDesc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.83688F));
-            this.TableLayaoutShortDesc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.16312F));
+            this.TableLayaoutShortDesc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.TableLayaoutShortDesc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.TableLayaoutShortDesc.Controls.Add(this.YearLabel, 0, 0);
             this.TableLayaoutShortDesc.Controls.Add(this.GenreLabel, 0, 1);
             this.TableLayaoutShortDesc.Controls.Add(this.MetacriticsLabel, 0, 2);
@@ -906,8 +906,8 @@
             this.YearLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(111)))), ((int)(((byte)(180)))));
             this.YearLabel.Location = new System.Drawing.Point(3, 0);
             this.YearLabel.Name = "YearLabel";
-            this.YearLabel.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.YearLabel.Size = new System.Drawing.Size(143, 40);
+            this.YearLabel.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.YearLabel.Size = new System.Drawing.Size(135, 40);
             this.YearLabel.TabIndex = 0;
             this.YearLabel.Text = "Year";
             this.YearLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -920,8 +920,8 @@
             this.GenreLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(111)))), ((int)(((byte)(180)))));
             this.GenreLabel.Location = new System.Drawing.Point(3, 40);
             this.GenreLabel.Name = "GenreLabel";
-            this.GenreLabel.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.GenreLabel.Size = new System.Drawing.Size(143, 40);
+            this.GenreLabel.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.GenreLabel.Size = new System.Drawing.Size(135, 40);
             this.GenreLabel.TabIndex = 1;
             this.GenreLabel.Text = "Genre";
             this.GenreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -934,8 +934,8 @@
             this.MetacriticsLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(111)))), ((int)(((byte)(180)))));
             this.MetacriticsLabel.Location = new System.Drawing.Point(3, 80);
             this.MetacriticsLabel.Name = "MetacriticsLabel";
-            this.MetacriticsLabel.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.MetacriticsLabel.Size = new System.Drawing.Size(143, 40);
+            this.MetacriticsLabel.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.MetacriticsLabel.Size = new System.Drawing.Size(135, 40);
             this.MetacriticsLabel.TabIndex = 2;
             this.MetacriticsLabel.Text = "Metacritics";
             this.MetacriticsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -948,8 +948,8 @@
             this.UserScoreLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(111)))), ((int)(((byte)(180)))));
             this.UserScoreLabel.Location = new System.Drawing.Point(3, 120);
             this.UserScoreLabel.Name = "UserScoreLabel";
-            this.UserScoreLabel.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.UserScoreLabel.Size = new System.Drawing.Size(143, 41);
+            this.UserScoreLabel.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.UserScoreLabel.Size = new System.Drawing.Size(135, 41);
             this.UserScoreLabel.TabIndex = 3;
             this.UserScoreLabel.Text = "User rate";
             this.UserScoreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -960,9 +960,9 @@
             this.YearLabelA.BackColor = System.Drawing.Color.Transparent;
             this.YearLabelA.Dock = System.Windows.Forms.DockStyle.Fill;
             this.YearLabelA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(173)))), ((int)(((byte)(117)))));
-            this.YearLabelA.Location = new System.Drawing.Point(152, 0);
+            this.YearLabelA.Location = new System.Drawing.Point(144, 0);
             this.YearLabelA.Name = "YearLabelA";
-            this.YearLabelA.Size = new System.Drawing.Size(127, 40);
+            this.YearLabelA.Size = new System.Drawing.Size(135, 40);
             this.YearLabelA.TabIndex = 4;
             this.YearLabelA.Text = "2019";
             this.YearLabelA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -973,9 +973,9 @@
             this.GenreLabelA.BackColor = System.Drawing.Color.Transparent;
             this.GenreLabelA.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GenreLabelA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(173)))), ((int)(((byte)(117)))));
-            this.GenreLabelA.Location = new System.Drawing.Point(152, 40);
+            this.GenreLabelA.Location = new System.Drawing.Point(144, 40);
             this.GenreLabelA.Name = "GenreLabelA";
-            this.GenreLabelA.Size = new System.Drawing.Size(127, 40);
+            this.GenreLabelA.Size = new System.Drawing.Size(135, 40);
             this.GenreLabelA.TabIndex = 5;
             this.GenreLabelA.Text = "FPS";
             this.GenreLabelA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -986,9 +986,9 @@
             this.MetacriticsLabelA.BackColor = System.Drawing.Color.Transparent;
             this.MetacriticsLabelA.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MetacriticsLabelA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(173)))), ((int)(((byte)(117)))));
-            this.MetacriticsLabelA.Location = new System.Drawing.Point(152, 80);
+            this.MetacriticsLabelA.Location = new System.Drawing.Point(144, 80);
             this.MetacriticsLabelA.Name = "MetacriticsLabelA";
-            this.MetacriticsLabelA.Size = new System.Drawing.Size(127, 40);
+            this.MetacriticsLabelA.Size = new System.Drawing.Size(135, 40);
             this.MetacriticsLabelA.TabIndex = 6;
             this.MetacriticsLabelA.Text = "83";
             this.MetacriticsLabelA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -999,9 +999,9 @@
             this.UserScoreLabelA.BackColor = System.Drawing.Color.Transparent;
             this.UserScoreLabelA.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UserScoreLabelA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(173)))), ((int)(((byte)(117)))));
-            this.UserScoreLabelA.Location = new System.Drawing.Point(152, 120);
+            this.UserScoreLabelA.Location = new System.Drawing.Point(144, 120);
             this.UserScoreLabelA.Name = "UserScoreLabelA";
-            this.UserScoreLabelA.Size = new System.Drawing.Size(127, 41);
+            this.UserScoreLabelA.Size = new System.Drawing.Size(135, 41);
             this.UserScoreLabelA.TabIndex = 7;
             this.UserScoreLabelA.Text = "3,8";
             this.UserScoreLabelA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
