@@ -81,7 +81,9 @@ namespace PcGameChecker
 				{
 					if (myProperty.Name == "Name") Program.ThisPC.Processor.Name = obj.Properties[myProperty.Name].Value.ToString();
 					if (myProperty.Name == "NumberOfCores") Program.ThisPC.Processor.NumberOfCores = Convert.ToUInt32(obj.Properties[myProperty.Name].Value);
-					if (myProperty.Name == "ThreadCount") Program.ThisPC.Processor.ThreadCount = Convert.ToUInt32(obj.Properties[myProperty.Name].Value);
+					if (myProperty.Name == "ThreadCount" || myProperty.Name == "NumberOfLogicalProcessors")	{ 
+						if(Program.ThisPC.Processor.ThreadCount == 0) Program.ThisPC.Processor.ThreadCount = Convert.ToUInt32(obj.Properties[myProperty.Name].Value);
+					}
 					if (myProperty.Name == "MaxClockSpeed") Program.ThisPC.Processor.MaxClockSpeed = Convert.ToUInt32(obj.Properties[myProperty.Name].Value);
 				}
 			}
@@ -110,7 +112,7 @@ namespace PcGameChecker
 					{
 						foreach (var myProperty in mc.Properties) //assign every value untill it stumbles upon correct GPU
 						{
-							if (myProperty.Name == "Caption" || myProperty.Name == "Name") // in case if those parameters are different from gcf.ChoosenGPU
+							if (myProperty.Name == "Caption" || myProperty.Name == "Name" || myProperty.Name == "VideoProcessor") // in case if those parameters are different from gcf.ChoosenGPU
 							{
 								if (obj.Properties[myProperty.Name].Value.ToString().Contains(gcf.ChoosenGPU))
 								Program.ThisPC.GraphicsCard.Name = obj.Properties[myProperty.Name].Value.ToString();

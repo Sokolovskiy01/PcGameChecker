@@ -21,7 +21,7 @@ namespace PcGameChecker
 		private System.Diagnostics.PerformanceCounter CPU_perf = new PerformanceCounter();
 		private int driveleftmargin = 230;
 		private int gametopmargin = 92;
-		int gamescount = 0;
+		int gamescount = Program.GamesList.Count();
 		Point lastPoint;
 		public FormMain()
 		{
@@ -172,11 +172,10 @@ namespace PcGameChecker
 				body = Color.White;
 				GamesGamesList.BackColor = Color.White;
 			}
-			gamescount = 0;
 			foreach (Game game in Program.GamesList)
 			{
 				c = SetCYRIColor(game);
-				GameBlockVertical gbv = new GameBlockVertical(game, c, body, gamescount);
+				GameBlockVertical gbv = new GameBlockVertical(game, c, body, Program.GamesList.IndexOf(game));
 				if (marginleft > GamesGamesList.Width - 270) {
 					marginleft = 12;
 					margintop += 450;
@@ -185,7 +184,6 @@ namespace PcGameChecker
 				gbv.Cursor = Cursors.Hand;
 				GamesGamesList.Controls.Add(gbv);
 				marginleft += 298;
-				gamescount++;
 			}
 		}
 		private void DisableButtons()
