@@ -114,9 +114,10 @@ namespace PcGameChecker
 						{
 							if (myProperty.Name == "Caption" || myProperty.Name == "Name" || myProperty.Name == "VideoProcessor") // in case if those parameters are different from gcf.ChoosenGPU
 							{
-								if (obj.Properties[myProperty.Name].Value.ToString().Contains(gcf.ChoosenGPU))
-								Program.ThisPC.GraphicsCard.Name = obj.Properties[myProperty.Name].Value.ToString();
-								CurrGPU = true;
+								if (obj.Properties[myProperty.Name].Value.ToString().Contains(gcf.ChoosenGPU)) {
+									Program.ThisPC.GraphicsCard.Name = obj.Properties[myProperty.Name].Value.ToString();
+									CurrGPU = true;
+								}
 							}
 							if (myProperty.Name == "AdapterRAM") Program.ThisPC.GraphicsCard.Vram = Convert.ToUInt64(obj.Properties[myProperty.Name].Value) / 1048576;
 							if (myProperty.Name == "CurrentRefreshRate") Program.ThisPC.GraphicsCard.CurrentRefreshRate = Convert.ToUInt32(obj.Properties[myProperty.Name].Value);
