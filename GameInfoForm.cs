@@ -16,6 +16,8 @@ namespace PcGameChecker
 		public GameInfoForm()
 		{
 			InitializeComponent();
+			SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.SupportsTransparentBackColor | ControlStyles.UserPaint, true);
+			this.DoubleBuffered = true;
 		}
 		public GameInfoForm(Game game, Color bordercolor)
 		{
