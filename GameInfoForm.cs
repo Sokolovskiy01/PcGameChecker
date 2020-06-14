@@ -79,7 +79,7 @@ namespace PcGameChecker
 			}
 			CanYouRunItLabel.ForeColor = bordercolor;
 
-			if (game.Rec_RAM != 0)
+			if (game.Rec_RAM != 0) // if Recommended sys req exsists
 			{
 				ReccomendedSpecsLabel.Visible = true;
 				TableLayoutRecSpecs.Visible = true;

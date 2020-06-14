@@ -588,7 +588,7 @@
             this.label1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.label1.Size = new System.Drawing.Size(184, 40);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Number of cores";
+            this.label1.Text = "Cores";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // MinimalCMLabel
@@ -623,7 +623,7 @@
             this.label2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.label2.Size = new System.Drawing.Size(184, 40);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Theads count";
+            this.label2.Text = "Threads ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3

@@ -130,7 +130,7 @@ namespace PcGameChecker
 				Sorted2.Clear();
 			}
 		}
-		private void DeserializeGames(List<Game> SelectedList)
+		private void DeserializeGames(List<Game> SelectedList) // HomePanel
 		{
 			foreach (Game game in SelectedList)
 			{
@@ -157,7 +157,7 @@ namespace PcGameChecker
 				}
 			}
 		}
-		private void CreateGamesList()
+		private void CreateGamesList() // GamesPannel
 		{
 			int marginleft = 12;
 			int margintop = 6;
@@ -218,6 +218,7 @@ namespace PcGameChecker
 
 			SettingsLabel.Font = new Font(Program.Comfortaa.Families[0], SettingsLabel.Font.Size);
 			SettingsDarkModeLabel.Font = new Font(Program.Comfortaa.Families[0], SettingsDarkModeLabel.Font.Size);
+			SettingsForeColorLabel.Font = new Font(Program.Comfortaa.Families[0], SettingsForeColorLabel.Font.Size);
 			SettingsGamesYesLabel.Font = new Font(Program.Comfortaa.Families[0], SettingsGamesYesLabel.Font.Size);
 			SettingsGameMaybeLabel.Font = new Font(Program.Comfortaa.Families[0], SettingsGameMaybeLabel.Font.Size);
 			SettingsGamesNoLabel.Font = new Font(Program.Comfortaa.Families[0], SettingsGamesNoLabel.Font.Size);
@@ -227,6 +228,20 @@ namespace PcGameChecker
 			SettingsGamesNoSwitch.Location = new Point(SettingsGamesNoLabel.Location.X + SettingsGamesNoLabel.Width, SettingsGamesNoSwitch.Location.Y);
 			SettingsApplyButton.Font = new Font(Program.Comfortaa.Families[0], SettingsApplyButton.Font.Size);
 			SettingsResetButton.Font = new Font(Program.Comfortaa.Families[0], SettingsResetButton.Font.Size);
+			SettingsSortByLabel.Font = new Font(Program.Comfortaa.Families[0], SettingsSortByLabel.Font.Size);
+
+			if (Program.ThisPC.IsDarkModeEnabled == true) {
+				SettingsDarkModeSwitch.SwitchState = XanderUI.XUISwitch.State.On;
+			}
+			if (Program.ThisPC.CYRIYesDisplay == false) {
+				SettingsGamesYesSwitch.SwitchState = XanderUI.XUISwitch.State.Off;
+			}
+			if (Program.ThisPC.CYRIMaybeDisplay == false) {
+				SettingsGamesMaybeSwitch.SwitchState = XanderUI.XUISwitch.State.Off;
+			}
+			if (Program.ThisPC.CYRINoDisplay == false) {
+				SettingsGamesNoSwitch.SwitchState = XanderUI.XUISwitch.State.Off;
+			}
 		}
 		private void FormMain_Shown(object sender, EventArgs e)
 		{
@@ -239,6 +254,22 @@ namespace PcGameChecker
 
 		private void closeButton1_Click(object sender, EventArgs e)
 		{
+			if (SettingsGamesYesSwitch.SwitchState == XanderUI.XUISwitch.State.Off) {
+				Program.ThisPC.CYRIYesDisplay = false;
+            }
+			else Program.ThisPC.CYRIYesDisplay = true;
+			if (SettingsGamesMaybeSwitch.SwitchState == XanderUI.XUISwitch.State.Off) {
+				Program.ThisPC.CYRIMaybeDisplay = false;
+            }
+			else Program.ThisPC.CYRIMaybeDisplay = true;
+			if (SettingsGamesNoSwitch.SwitchState == XanderUI.XUISwitch.State.Off) {
+				Program.ThisPC.CYRINoDisplay = false;
+            }
+			else Program.ThisPC.CYRINoDisplay = true;
+			BinaryFormatter formatter = new BinaryFormatter();
+			FileStream fs = new FileStream("currentmachine.dat", FileMode.OpenOrCreate);
+			formatter.Serialize(fs, Program.ThisPC);
+			fs.Close();
 			Application.Exit();
 		}
 
@@ -312,6 +343,7 @@ namespace PcGameChecker
 				GamesPanelGamesCount.BackgroundColor = Color.FromArgb(40, 40, 40);
 				BackColor = Color.FromArgb(40, 40, 40);
 				ForeColor = Color.FromArgb(225, 225, 225);
+				Program.ThisPC.IsDarkModeEnabled = true;
 			}
 			else
 			{
@@ -327,6 +359,7 @@ namespace PcGameChecker
 				GamesPanelGamesCount.BackgroundColor = Color.White;
 				BackColor = Color.White;
 				ForeColor = Color.Black;
+				Program.ThisPC.IsDarkModeEnabled = false;
 			}
 		}
 
@@ -338,6 +371,7 @@ namespace PcGameChecker
 		private void SettingsApplyButton_Click(object sender, EventArgs e)
 		{
 			this.ForeColor = SettingsPreviewLabel.ForeColor;
+			Program.ThisPC.Forecolor = SettingsPreviewLabel.ForeColor;
 		}
 
 		private void SettingsResetButton_Click(object sender, EventArgs e)
@@ -354,6 +388,7 @@ namespace PcGameChecker
 				SettingsFontColorPicker.SelectedColor = Color.Black;
 				SettingsPreviewLabel.ForeColor = Color.Black;
 			}
+			Program.ThisPC.Forecolor = SettingsPreviewLabel.ForeColor;
 		}
 
 		private void SettingsScanComputerAgainButton_Click(object sender, EventArgs e)

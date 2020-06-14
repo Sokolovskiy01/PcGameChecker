@@ -10,11 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-
 namespace PcGameChecker
 {
-
 	public partial class GameADD : Form
 	{
 		List<Game> GameList = new List<Game>();
@@ -368,7 +365,6 @@ namespace PcGameChecker
 			MessageBox.Show("Game was succesfully added!");
 			clearfields();
 		}
-
 		private void label13_Click_1(object sender, EventArgs e)
 		{
 			if (OpenGamePicture.ShowDialog() == DialogResult.OK)
@@ -377,7 +373,6 @@ namespace PcGameChecker
 				pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
 			}
 		}
-
 		private void label21_Click(object sender, EventArgs e)
 		{
 			if (OpenGameIcon.ShowDialog() == DialogResult.OK)
@@ -385,11 +380,6 @@ namespace PcGameChecker
 				pictureBox2.BackgroundImage = Image.FromFile(OpenGameIcon.FileName);
 				pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
 			}
-		}
-
-		private void textBox1_TextChanged(object sender, EventArgs e)
-		{
-
 		}
 	}
 }

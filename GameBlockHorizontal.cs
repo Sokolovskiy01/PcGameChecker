@@ -154,6 +154,7 @@ namespace PcGameChecker
 			base.OnClick(e);
 			GameInfoForm g = new GameInfoForm(Program.GamesList[gameid], BorderColor);
 			g.BackColor = Parent.Parent.Parent.BackColor;
+			g.ForeColor = Parent.Parent.Parent.ForeColor;
 			g.Show();
 		}
 	}

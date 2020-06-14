@@ -528,7 +528,7 @@
             this.SettingsScanComputerAgainButton.Location = new System.Drawing.Point(50, 658);
             this.SettingsScanComputerAgainButton.Name = "SettingsScanComputerAgainButton";
             this.SettingsScanComputerAgainButton.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.SettingsScanComputerAgainButton.Rounding = 60F;
+            this.SettingsScanComputerAgainButton.Rounding = 30F;
             this.SettingsScanComputerAgainButton.Size = new System.Drawing.Size(290, 60);
             this.SettingsScanComputerAgainButton.TabIndex = 16;
             this.SettingsScanComputerAgainButton.Text = "Scan PC again";

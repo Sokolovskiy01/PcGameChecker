@@ -16,8 +16,8 @@ namespace PcGameChecker
         public string Description;
         public uint Year;
         public string Genre;
-        public Image Poster;
-        public Image Icon;
+        public Image Poster; // GameBlockVertical
+        public Image Icon; // GameBlockHorizontal
         public string Req_OS;
         public string Req_OS_Architecture;
         public string Req_disk_space;

@@ -70,4 +70,3 @@ C:\Users\Sokol\Desktop\PcGameChecker\obj\Debug\PcGameChecker.csproj.CopyComplete
 C:\Users\Sokol\Desktop\PcGameChecker\obj\Debug\PcGameChecker.exe
 C:\Users\Sokol\Desktop\PcGameChecker\obj\Debug\PcGameChecker.pdb
 C:\Users\Sokol\Desktop\Migration\PcGameChecker\obj\Debug\PcGameChecker.csprojAssemblyReference.cache
-C:\Users\Sokol\Desktop\Migration\PcGameChecker\bin\Debug\System.Management.dll
