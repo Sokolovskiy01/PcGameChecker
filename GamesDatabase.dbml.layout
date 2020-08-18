@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.875" name="GamesDatabase">
+  <DataContextMoniker Name="/GamesDatabaseDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6df03207-b182-42cf-81c5-8b4dc8749ba3" absoluteBounds="3.75, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/GamesDatabaseDataContext/Platform" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8ca438a7-e7de-4522-a04e-42605c078d74" absoluteBounds="3.7649999999999997, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="689d9b9f-7672-4e80-8e86-8c11fc94ede6" absoluteBounds="0.5, 0.5, 2, 9.0783512369791648">
+      <DataClassMoniker Name="/GamesDatabaseDataContext/Game" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6b93bd9d-137e-4750-b547-dd89d45ddbac" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 8.5183512369791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="da8e0923-6e50-4987-8bf3-ddfb3749cbb0" absoluteBounds="3.75, 3, 2, 1.3862939453125">
+      <DataClassMoniker Name="/GamesDatabaseDataContext/GameToPlatform" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aa19411f-5cb2-4595-b2bc-3c8dc60193af" absoluteBounds="3.7649999999999997, 3.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 3.69314697265625); (3.75 : 3.69314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GamesDatabaseDataContext/Game/Game_GameToPlatform" />
+      <nodes>
+        <classShapeMoniker Id="689d9b9f-7672-4e80-8e86-8c11fc94ede6" />
+        <classShapeMoniker Id="da8e0923-6e50-4987-8bf3-ddfb3749cbb0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.75 : 2.07859537760417); (4.75 : 3)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GamesDatabaseDataContext/Platform/Platform_GameToPlatform" />
+      <nodes>
+        <classShapeMoniker Id="6df03207-b182-42cf-81c5-8b4dc8749ba3" />
+        <classShapeMoniker Id="da8e0923-6e50-4987-8bf3-ddfb3749cbb0" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

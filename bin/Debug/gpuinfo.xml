@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<gpuz_dump>
+	<version>2.30.0</version>
+	<card>
+		<location>0:2:2</location>
+		<cardname>Intel(R) UHD Graphics 630</cardname>
+		<vendor>Intel</vendor>
+		<vendorid>8086</vendorid>
+		<gpuname>Coffee Lake GT2</gpuname>
+		<diesize>0</diesize>
+		<processsize>14</processsize>
+		<deviceid>3E9B</deviceid>
+		<subsysid>3A2E</subsysid>
+		<subvendor>Lenovo</subvendor>
+		<subvendorid>17AA</subvendorid>
+		<gpurevision></gpurevision>
+		<biosversion>1015 PC 14.34 07/12/2018 07:30:16</biosversion>
+		<businterface>N/A</businterface>
+		<directxsupport>12 (12_1)</directxsupport>
+		<memtype>DDR4</memtype>
+		<memvendor></memvendor>
+		<membuswidth>64</membuswidth>
+		<memsize>0</memsize>
+		<numrops>8</numrops>
+		<numtmus>16</numtmus>
+		<numshadersvertex></numshadersvertex>
+		<numshaderspixel></numshaderspixel>
+		<numshadersunified>24</numshadersunified>
+		<driverversion>26.20.100.7870 DCH / Win10 64</driverversion>
+		<fillratepixel>8.4</fillratepixel>
+		<fillratetexel>16.8</fillratetexel>
+		<membandwidth>19.2</membandwidth>
+		<clockgpu>350</clockgpu>
+		<clockmem>1200</clockmem>
+		<clockshader></clockshader>
+		<clockgpudefault>350</clockgpudefault>
+		<clockmemdefault>1200</clockmemdefault>
+		<clockshaderdefault></clockshaderdefault>
+		<clockgpuboost>1050</clockgpuboost>
+		<clockgpuboostdefault>1050</clockgpuboostdefault>
+		<multigpuname>Multi-GPU</multigpuname>
+		<multigpu0>Disabled</multigpu0>
+		<cuda>0</cuda>
+		<opencl>1</opencl>
+		<dxcompute>1</dxcompute>
+		<physx>0</physx>
+	</card>
+	<card>
+		<location>1:0:0</location>
+		<cardname>NVIDIA GeForce GTX 1650</cardname>
+		<vendor>NVIDIA</vendor>
+		<vendorid>10DE</vendorid>
+		<gpuname>TU117</gpuname>
+		<diesize>200</diesize>
+		<processsize>12</processsize>
+		<deviceid>1F91</deviceid>
+		<subsysid>3A2E</subsysid>
+		<subvendor>Lenovo</subvendor>
+		<subvendorid>17AA</subvendorid>
+		<gpurevision>A1</gpurevision>
+		<biosversion>90.17.1C.00.6F</biosversion>
+		<businterface>PCIe x16 3.0 @ x16 3.0</businterface>
+		<directxsupport>12 (12_1)</directxsupport>
+		<memtype>GDDR5</memtype>
+		<memvendor>Hynix</memvendor>
+		<membuswidth>128</membuswidth>
+		<memsize>4096</memsize>
+		<numrops>32</numrops>
+		<numtmus>64</numtmus>
+		<numshadersvertex></numshadersvertex>
+		<numshaderspixel></numshaderspixel>
+		<numshadersunified>1024</numshadersunified>
+		<driverversion>26.21.14.4223 (NVIDIA 442.23) DCH / Win10 64</driverversion>
+		<fillratepixel>49.9</fillratepixel>
+		<fillratetexel>99.8</fillratetexel>
+		<membandwidth>128.1</membandwidth>
+		<clockgpu>1395</clockgpu>
+		<clockmem>2001</clockmem>
+		<clockshader></clockshader>
+		<clockgpudefault>1395</clockgpudefault>
+		<clockmemdefault>2001</clockmemdefault>
+		<clockshaderdefault></clockshaderdefault>
+		<clockgpuboost>1560</clockgpuboost>
+		<clockgpuboostdefault>1560</clockgpuboostdefault>
+		<multigpuname>NVIDIA SLI</multigpuname>
+		<multigpu0>Disabled </multigpu0>
+		<cuda>1</cuda>
+		<opencl>1</opencl>
+		<dxcompute>1</dxcompute>
+		<physx>0</physx>
+	</card>
+</gpuz_dump>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="GamesDatabase" Class="GamesDatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Sokol\Desktop\DataBase\GamesDatabase.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="PcGameChecker.Properties.Settings" SettingsPropertyName="GamesDatabaseConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Platform" Member="Platforms">
+    <Type Name="Platform">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="Subname" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="Icon" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="Platform_GameToPlatform" Member="GameToPlatforms" ThisKey="Id" OtherKey="PlatformId" Type="GameToPlatform" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Game" Member="Games">
+    <Type Name="Game">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Genre" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Release" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="MetacriticsCheckLink" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="MetacriticsCritics" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MetacriticsUserScore" Type="System.Decimal" DbType="Decimal(3,1) NOT NULL" CanBeNull="false" />
+      <Column Name="Poster" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Icon" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="MinOS" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="MinOSArchitecture" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MinDiskSpace" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MinRAM" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MinProcesorName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="MinProcessorCores" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MinProcessorThreads" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MinProcessorClock" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MinGPUName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="MinGPUClock" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MinGPUMemoryClock" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MinGPUMemoryCapacity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MinGPUBusWidth" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MinGPUMemoryType" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="MinGPUDirectX" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="MinGPUShaderUnitCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MinGPUROPCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MinGPUTMUCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RecRAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RecProcesorName" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="RecProcessorCores" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RecProcessorThreads" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RecProcessorClock" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RecGPUName" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="RecGPUClock" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RecGPUMemoryClock" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RecGPUMemoryCapacity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RecGPUBusWidth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RecGPUMemoryType" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="RecGPUDirectX" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="RecGPUShaderUnitCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RecGPUROPCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RecGPUTMUCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Game_GameToPlatform" Member="GameToPlatforms" ThisKey="Id" OtherKey="GameId" Type="GameToPlatform" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GameToPlatform" Member="GameToPlatforms">
+    <Type Name="GameToPlatform">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GameId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PlatformId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Game_GameToPlatform" Member="Game" ThisKey="GameId" OtherKey="Id" Type="Game" IsForeignKey="true" />
+      <Association Name="Platform_GameToPlatform" Member="Platform" ThisKey="PlatformId" OtherKey="Id" Type="Platform" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
