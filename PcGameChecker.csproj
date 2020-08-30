@@ -109,7 +109,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Comfortaa-VariableFont_wght.ttf" />
     <None Include="GamesDatabase.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>GamesDatabase.designer.cs</LastGenOutput>
@@ -152,6 +151,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Res\SettingsHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Res\Processor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Res\GraphicsCard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Res\RAM.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

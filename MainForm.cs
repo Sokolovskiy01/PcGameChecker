@@ -34,11 +34,13 @@ namespace PcGameChecker
             {
 				lpb.Font = new Font(Program.Comfortaa.Families[0], 65, GraphicsUnit.Pixel);
             }
+			mainPanelHardwareInfo1.Font = new Font(Program.Comfortaa.Families[0], 60, GraphicsUnit.Pixel);
+			mainPanelHardwareInfo1.HardwareFont = new Font(Program.Comfortaa.Families[0], 24, GraphicsUnit.Pixel);
 		}
 
 		private void MainForm_Shown(object sender, EventArgs e)
 		{
-			
+			//MessageBox.Show(Math.Log(4, 200).ToString());
 		}
 
 		private void GetMinimalLeftPanelButtonWidth()

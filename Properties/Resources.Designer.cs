@@ -83,6 +83,16 @@ namespace PcGameChecker.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GraphicsCard {
+            get {
+                object obj = ResourceManager.GetObject("GraphicsCard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Main {
             get {
                 object obj = ResourceManager.GetObject("Main", resourceCulture);
@@ -96,6 +106,26 @@ namespace PcGameChecker.Properties {
         internal static System.Drawing.Bitmap MainHover {
             get {
                 object obj = ResourceManager.GetObject("MainHover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Processor {
+            get {
+                object obj = ResourceManager.GetObject("Processor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RAM {
+            get {
+                object obj = ResourceManager.GetObject("RAM", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

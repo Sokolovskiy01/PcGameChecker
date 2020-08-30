@@ -11,3 +11,4 @@ C:\Users\Sokol\Desktop\PcGameChecker2.0\PcGameChecker\bin\Debug\XanderUI.dll
 C:\Users\Sokol\Desktop\PcGameChecker2.0\PcGameChecker\obj\Debug\PcGameChecker.DBEditForm.resources
 C:\Users\Sokol\Desktop\PcGameChecker2.0\PcGameChecker\obj\Debug\PcGameChecker.csproj.CopyComplete
 C:\Users\Sokol\Desktop\PcGameChecker2.0\PcGameChecker\obj\Debug\PcGameChecker.MainForm.resources
+C:\Users\Sokol\Desktop\PcGameChecker2.0\PcGameChecker\obj\Debug\PcGameChecker.csprojAssemblyReference.cache

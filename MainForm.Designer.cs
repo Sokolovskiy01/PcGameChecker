@@ -29,11 +29,14 @@
         private void InitializeComponent()
         {
             this.LeftPanel = new System.Windows.Forms.Panel();
+            this.MainPagePanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.mainPanelHardwareInfo1 = new PcGameChecker.GraphExtensions.MainPanelHardwareInfo();
             this.LeftPanelSettingsButton = new PcGameChecker.GraphExtensions.LeftPanelButton();
             this.LeftPanelGamesButton = new PcGameChecker.GraphExtensions.LeftPanelButton();
             this.LeftPanelMainButton = new PcGameChecker.GraphExtensions.LeftPanelButton();
-            this.MainPagePanel = new System.Windows.Forms.Panel();
             this.LeftPanel.SuspendLayout();
+            this.MainPagePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // LeftPanel
@@ -48,6 +51,48 @@
             this.LeftPanel.Name = "LeftPanel";
             this.LeftPanel.Size = new System.Drawing.Size(134, 726);
             this.LeftPanel.TabIndex = 0;
+            // 
+            // MainPagePanel
+            // 
+            this.MainPagePanel.AutoScroll = true;
+            this.MainPagePanel.BackColor = System.Drawing.Color.White;
+            this.MainPagePanel.Controls.Add(this.label1);
+            this.MainPagePanel.Controls.Add(this.mainPanelHardwareInfo1);
+            this.MainPagePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPagePanel.Location = new System.Drawing.Point(134, 0);
+            this.MainPagePanel.Name = "MainPagePanel";
+            this.MainPagePanel.Size = new System.Drawing.Size(1183, 726);
+            this.MainPagePanel.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(31, 398);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "label1";
+            // 
+            // mainPanelHardwareInfo1
+            // 
+            this.mainPanelHardwareInfo1.CPUIcon = global::PcGameChecker.Properties.Resources.Processor;
+            this.mainPanelHardwareInfo1.CpuName = "Intel Core i7-8550U CPU @ 1.8 GHz";
+            this.mainPanelHardwareInfo1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.mainPanelHardwareInfo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 65F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
+            this.mainPanelHardwareInfo1.GpuIcon = global::PcGameChecker.Properties.Resources.GraphicsCard;
+            this.mainPanelHardwareInfo1.GpuName = "Intel UHD 620 Graphics VRAM: 1024 MB";
+            this.mainPanelHardwareInfo1.HardwareFont = null;
+            this.mainPanelHardwareInfo1.Location = new System.Drawing.Point(0, 0);
+            this.mainPanelHardwareInfo1.MachineName = "DIMON-LAPTOP";
+            this.mainPanelHardwareInfo1.MinimumSize = new System.Drawing.Size(400, 200);
+            this.mainPanelHardwareInfo1.Mode = PcGameChecker.GraphExtensions.MainPanelHardwareInfo.PanelMode.SmallColumns;
+            this.mainPanelHardwareInfo1.Name = "mainPanelHardwareInfo1";
+            this.mainPanelHardwareInfo1.Padding = new System.Windows.Forms.Padding(20);
+            this.mainPanelHardwareInfo1.RamIcon = global::PcGameChecker.Properties.Resources.RAM;
+            this.mainPanelHardwareInfo1.RamName = "8196 MB 2400 MHz";
+            this.mainPanelHardwareInfo1.Size = new System.Drawing.Size(1183, 381);
+            this.mainPanelHardwareInfo1.TabIndex = 0;
+            this.mainPanelHardwareInfo1.Text = "mainPanelHardwareInfo1";
             // 
             // LeftPanelSettingsButton
             // 
@@ -112,16 +157,6 @@
             this.LeftPanelMainButton.TextRectangleTopPadding = 10;
             this.LeftPanelMainButton.Click += new System.EventHandler(this.LeftPanelMainButton_Click);
             // 
-            // MainPagePanel
-            // 
-            this.MainPagePanel.AutoScroll = true;
-            this.MainPagePanel.BackColor = System.Drawing.Color.White;
-            this.MainPagePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPagePanel.Location = new System.Drawing.Point(134, 0);
-            this.MainPagePanel.Name = "MainPagePanel";
-            this.MainPagePanel.Size = new System.Drawing.Size(1183, 726);
-            this.MainPagePanel.TabIndex = 1;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -137,6 +172,8 @@
             this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.Resize += new System.EventHandler(this.MainForm_Resize);
             this.LeftPanel.ResumeLayout(false);
+            this.MainPagePanel.ResumeLayout(false);
+            this.MainPagePanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -148,5 +185,7 @@
         private GraphExtensions.LeftPanelButton LeftPanelGamesButton;
         private GraphExtensions.LeftPanelButton LeftPanelMainButton;
         private System.Windows.Forms.Panel MainPagePanel;
+        private System.Windows.Forms.Label label1;
+        private GraphExtensions.MainPanelHardwareInfo mainPanelHardwareInfo1;
     }
 }

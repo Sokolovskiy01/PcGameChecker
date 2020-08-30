@@ -184,7 +184,7 @@ namespace PcGameChecker.GraphExtensions
 				graph.DrawRectangle(new Pen(Parent.BackColor), controlrect);
 				graph.FillRectangle(new SolidBrush(Parent.BackColor), controlrect);
 			}
-			Rectangle bodyrect = new Rectangle((MousePressed ? 1 : 0) + Padding.Left, (MousePressed ? 1 : 0) + Padding.Top, controlrect.Width - (Padding.Right * 2), controlrect.Height - (Padding.Bottom * 2));
+			Rectangle bodyrect = new Rectangle((MousePressed ? 1 : 0) + Padding.Left, (MousePressed ? 1 : 0) + Padding.Top, controlrect.Width - (Padding.Right + Padding.Left), controlrect.Height - (Padding.Bottom + Padding.Top));
 			Rectangle iconrect = new Rectangle(bodyrect.X + (bodyrect.Width - bodyrect.Height) / 2, bodyrect.Y, bodyrect.Height, bodyrect.Height);
 			Rectangle textrect = new Rectangle();
 
