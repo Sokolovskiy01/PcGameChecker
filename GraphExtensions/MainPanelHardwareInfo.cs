@@ -110,6 +110,7 @@ namespace PcGameChecker.GraphExtensions
 
 				HardwareSF.Alignment = StringAlignment.Near;
 				HardwareSF.LineAlignment = StringAlignment.Center;
+				_HardwareFont = _OldHardwareFont;
 
 				if (HardwareFont != null)
 				{
